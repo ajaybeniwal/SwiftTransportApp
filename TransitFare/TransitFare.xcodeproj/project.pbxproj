@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B71C41C55D77600FC5782 /* Kingfisher.framework */; };
 		998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9261C4C871D00136EDD /* AppDelegate.swift */; };
 		998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9281C4C871D00136EDD /* FirstViewController.swift */; };
 		998BB92B1C4C871D00136EDD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB92A1C4C871D00136EDD /* SecondViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		994B71C41C55D77600FC5782 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		998BB9231C4C871D00136EDD /* TransitFare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitFare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998BB9261C4C871D00136EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		998BB9281C4C871D00136EDD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				994B71C41C55D77600FC5782 /* Kingfisher.framework */,
 				998BB9251C4C871D00136EDD /* TransitFare */,
 				998BB9241C4C871D00136EDD /* Products */,
 			);
@@ -77,6 +81,7 @@
 				998BB91F1C4C871D00136EDD /* Sources */,
 				998BB9201C4C871D00136EDD /* Frameworks */,
 				998BB9211C4C871D00136EDD /* Resources */,
+				994B71C71C55DBAA00FC5782 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +137,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		994B71C71C55DBAA00FC5782 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		998BB91F1C4C871D00136EDD /* Sources */ = {
@@ -251,6 +273,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TransitFare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ajay.TestApplication.TransitFare;
@@ -262,6 +288,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TransitFare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ajay.TestApplication.TransitFare;
@@ -288,6 +318,7 @@
 				998BB9391C4C871D00136EDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
