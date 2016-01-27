@@ -10,10 +10,14 @@
 		994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B71C41C55D77600FC5782 /* Kingfisher.framework */; };
 		998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9261C4C871D00136EDD /* AppDelegate.swift */; };
 		998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9281C4C871D00136EDD /* FirstViewController.swift */; };
-		998BB92B1C4C871D00136EDD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB92A1C4C871D00136EDD /* SecondViewController.swift */; };
 		998BB92E1C4C871D00136EDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998BB92C1C4C871D00136EDD /* Main.storyboard */; };
 		998BB9301C4C871D00136EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998BB92F1C4C871D00136EDD /* Assets.xcassets */; };
 		998BB9331C4C871D00136EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998BB9311C4C871D00136EDD /* LaunchScreen.storyboard */; };
+		999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63D91C577E8E00822ECF /* AddNewPassTableViewController.swift */; };
+		999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63DB1C57B22300822ECF /* APIUtility.swift */; };
+		999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */; };
+		999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63DF1C58CC6200822ECF /* Alamofire.framework */; };
+		999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63E11C58D0E900822ECF /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +25,15 @@
 		998BB9231C4C871D00136EDD /* TransitFare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitFare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998BB9261C4C871D00136EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		998BB9281C4C871D00136EDD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		998BB92A1C4C871D00136EDD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		998BB92D1C4C871D00136EDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		998BB92F1C4C871D00136EDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		998BB9321C4C871D00136EDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		998BB9341C4C871D00136EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		999C63D91C577E8E00822ECF /* AddNewPassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPassTableViewController.swift; sourceTree = "<group>"; };
+		999C63DB1C57B22300822ECF /* APIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUtility.swift; sourceTree = "<group>"; };
+		999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPassTableViewCell.swift; sourceTree = "<group>"; };
+		999C63DF1C58CC6200822ECF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		999C63E11C58D0E900822ECF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +42,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
+				999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */,
+				999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,9 +53,11 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				999C63E11C58D0E900822ECF /* SwiftyJSON.framework */,
 				994B71C41C55D77600FC5782 /* Kingfisher.framework */,
 				998BB9251C4C871D00136EDD /* TransitFare */,
 				998BB9241C4C871D00136EDD /* Products */,
+				999C63DF1C58CC6200822ECF /* Alamofire.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,11 +74,13 @@
 			children = (
 				998BB9261C4C871D00136EDD /* AppDelegate.swift */,
 				998BB9281C4C871D00136EDD /* FirstViewController.swift */,
-				998BB92A1C4C871D00136EDD /* SecondViewController.swift */,
 				998BB92C1C4C871D00136EDD /* Main.storyboard */,
 				998BB92F1C4C871D00136EDD /* Assets.xcassets */,
 				998BB9311C4C871D00136EDD /* LaunchScreen.storyboard */,
 				998BB9341C4C871D00136EDD /* Info.plist */,
+				999C63D91C577E8E00822ECF /* AddNewPassTableViewController.swift */,
+				999C63DB1C57B22300822ECF /* APIUtility.swift */,
+				999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */,
 			);
 			path = TransitFare;
 			sourceTree = "<group>";
@@ -146,6 +160,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
@@ -160,9 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				998BB92B1C4C871D00136EDD /* SecondViewController.swift in Sources */,
+				999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
+				999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
+				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +296,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TransitFare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ajay.TestApplication.TransitFare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +312,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TransitFare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ajay.TestApplication.TransitFare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
