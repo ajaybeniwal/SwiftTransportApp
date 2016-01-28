@@ -1,5 +1,4 @@
 github "onevcat/Kingfisher" ~> 2.0
 github "Alamofire/Alamofire" ~> 3.0
 github "SwiftyJSON/SwiftyJSON"
-
-3839231269
+github "jdg/MBProgressHUD" ~> 0.9.2

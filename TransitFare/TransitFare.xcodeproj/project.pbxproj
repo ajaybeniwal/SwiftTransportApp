@@ -18,6 +18,8 @@
 		999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */; };
 		999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63DF1C58CC6200822ECF /* Alamofire.framework */; };
 		999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63E11C58D0E900822ECF /* SwiftyJSON.framework */; };
+		999C63E51C59137800822ECF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63E41C59137800822ECF /* Product.swift */; };
+		999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63E61C5913BE00822ECF /* CreditCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPassTableViewCell.swift; sourceTree = "<group>"; };
 		999C63DF1C58CC6200822ECF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		999C63E11C58D0E900822ECF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		999C63E41C59137800822ECF /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		999C63E61C5913BE00822ECF /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				999C63E31C5912DA00822ECF /* Model */,
 				999C63E11C58D0E900822ECF /* SwiftyJSON.framework */,
 				994B71C41C55D77600FC5782 /* Kingfisher.framework */,
 				998BB9251C4C871D00136EDD /* TransitFare */,
@@ -83,6 +88,15 @@
 				999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */,
 			);
 			path = TransitFare;
+			sourceTree = "<group>";
+		};
+		999C63E31C5912DA00822ECF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				999C63E41C59137800822ECF /* Product.swift */,
+				999C63E61C5913BE00822ECF /* CreditCard.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +192,11 @@
 			files = (
 				999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
+				999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */,
 				999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
+				999C63E51C59137800822ECF /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

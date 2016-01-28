@@ -11,10 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class AddNewPassTableViewController: UITableViewController {
-    
+    var productCollection = [ProductModel]()
+    var cardCollection = [CreditCardModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getPassData()
+        getCardData()
         
         
     }
@@ -24,6 +26,33 @@ class AddNewPassTableViewController: UITableViewController {
         
     }
     
+     /*Fetch the credit card data using alamofire */
+    
+    func getCardData() -> Void{
+        
+        Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
+            {
+                (response) -> Void in
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    let data = json["data"]
+                    for (_,subJson):(String, JSON) in data {
+                        let _cardModel = CreditCardModel(customerCode:subJson["customerCode"].string!,cardNumber:subJson["number"].string!)
+                        self.cardCollection.append(_cardModel)
+                        
+                    }
+                    self.tableView.reloadData()
+                    
+                    
+                }
+                else{
+                    print(response)
+                    print("error while fetching the records")
+                }
+            }
+        )
+        
+    }
     
     /*Fetch the product data and the credit card data from the api using alamofire */
     
@@ -34,14 +63,17 @@ class AddNewPassTableViewController: UITableViewController {
                 if let value = response.result.value {
                     let json = JSON(value)
                     let data = json["data"]
-                    for (index,subJson):(String, JSON) in data {
-                        print(index)
-                        print(subJson["accountType"].string)
+                    for (_,subJson):(String, JSON) in data {
+                        let _productModel = ProductModel(id:subJson["_id"].string!,productName:subJson["optionName"].string! +  "-" + String(subJson["basePrice"].number!))
+                        self.productCollection.append(_productModel)
+                        
                     }
+                    self.tableView.reloadData()
                     
                     
                 }
                 else{
+                    print(response)
                     print("error while fetching the records")
                 }
             }
@@ -54,18 +86,25 @@ class AddNewPassTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if(section == 0){
+            return self.productCollection.count
+        }
+        if(section==1){
+            return self.cardCollection.count
+        }
+    return 0
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NewPassTableCell", forIndexPath: indexPath) as! AddNewPassTableViewCell
         
         if(indexPath.section==0){
-            cell.cardNumber.text = "Discout Day Pass - $1.25"
+            cell.cardNumber.text = self.productCollection[indexPath.row].productName
             
         }
         else{
-            cell.cardNumber.text = "1233-xxxx-xxxx-x123"
+            cell.cardNumber.text = self.cardCollection[indexPath.row].cardNumber
         }
         
         
