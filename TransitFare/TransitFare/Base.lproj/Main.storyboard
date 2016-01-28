@@ -121,11 +121,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="visacard" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-vp-N0D">
-                                            <rect key="frame" x="15" y="15" width="32" height="32"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MasterCard" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-vp-N0D">
+                                            <rect key="frame" x="15" y="8" width="73" height="44"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD5-Dn-UUI">
-                                            <rect key="frame" x="55" y="20" width="309" height="21"/>
+                                            <rect key="frame" x="98" y="20" width="309" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -143,7 +143,13 @@
                             <outlet property="delegate" destination="NF1-cz-Vf0" id="eaJ-Qf-wIH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="AddNewPass" id="uUx-AA-PaV"/>
+                    <navigationItem key="navigationItem" title="AddNewPass" id="uUx-AA-PaV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vGC-qR-Xyi">
+                            <connections>
+                                <action selector="saveNewPass:" destination="NF1-cz-Vf0" id="gfx-nb-S8A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mA-2d-100" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,8 +215,8 @@
     </scenes>
     <resources>
         <image name="AddNew" width="24" height="24"/>
+        <image name="MasterCard" width="73" height="44"/>
         <image name="Wallet" width="24" height="24"/>
         <image name="second" width="30" height="30"/>
-        <image name="visacard" width="32" height="32"/>
     </resources>
 </document>

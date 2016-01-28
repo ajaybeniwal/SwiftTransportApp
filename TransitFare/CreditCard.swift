@@ -10,4 +10,5 @@ import Foundation
 struct CreditCardModel {
     var customerCode:String
     var cardNumber:String
+    var cardType:String
 }

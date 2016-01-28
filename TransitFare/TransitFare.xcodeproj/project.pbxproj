@@ -20,6 +20,7 @@
 		999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63E11C58D0E900822ECF /* SwiftyJSON.framework */; };
 		999C63E51C59137800822ECF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63E41C59137800822ECF /* Product.swift */; };
 		999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63E61C5913BE00822ECF /* CreditCard.swift */; };
+		999C63E91C59D05A00822ECF /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63E81C59D05A00822ECF /* MBProgressHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		999C63E11C58D0E900822ECF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		999C63E41C59137800822ECF /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		999C63E61C5913BE00822ECF /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		999C63E81C59D05A00822ECF /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				999C63E91C59D05A00822ECF /* MBProgressHUD.framework in Frameworks */,
 				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
 				999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */,
 				999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */,
@@ -57,6 +60,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				999C63E81C59D05A00822ECF /* MBProgressHUD.framework */,
 				999C63E31C5912DA00822ECF /* Model */,
 				999C63E11C58D0E900822ECF /* SwiftyJSON.framework */,
 				994B71C41C55D77600FC5782 /* Kingfisher.framework */,
@@ -176,6 +180,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 			);
 			outputPaths = (
 			);

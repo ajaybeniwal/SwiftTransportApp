@@ -9,9 +9,13 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 class AddNewPassTableViewController: UITableViewController {
     var productCollection = [ProductModel]()
+    @IBAction func saveNewPass(sender: AnyObject) {
+        print("clicked on save button")
+    }
     var cardCollection = [CreditCardModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,7 @@ class AddNewPassTableViewController: UITableViewController {
      /*Fetch the credit card data using alamofire */
     
     func getCardData() -> Void{
-        
+        let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
             {
                 (response) -> Void in
@@ -37,17 +41,17 @@ class AddNewPassTableViewController: UITableViewController {
                     let json = JSON(value)
                     let data = json["data"]
                     for (_,subJson):(String, JSON) in data {
-                        let _cardModel = CreditCardModel(customerCode:subJson["customerCode"].string!,cardNumber:subJson["number"].string!)
+                        let _cardModel = CreditCardModel(customerCode:subJson["customerCode"].string!,
+                            cardNumber:subJson["number"].string!,cardType:subJson["card_type"].string!)
                         self.cardCollection.append(_cardModel)
                         
                     }
                     self.tableView.reloadData()
-                    
+                    progressHUD.hide(true)
                     
                 }
                 else{
-                    print(response)
-                    print("error while fetching the records")
+                    progressHUD.hide(true)
                 }
             }
         )
@@ -104,6 +108,17 @@ class AddNewPassTableViewController: UITableViewController {
             
         }
         else{
+            switch(self.cardCollection[indexPath.row].cardType){
+                case "VI":
+                cell.cardTypeView.image = UIImage(named: "Visa")
+                break
+                case "MC":
+                cell.cardTypeView.image = UIImage(named: "MasterCard")
+                break
+                default:
+                cell.cardTypeView.image = UIImage(named: "Amex")
+                break
+            }
             cell.cardNumber.text = self.cardCollection[indexPath.row].cardNumber
         }
         
