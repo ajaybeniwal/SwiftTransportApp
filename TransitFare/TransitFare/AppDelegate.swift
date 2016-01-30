@@ -21,7 +21,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor =  UIColor.whiteColor()
         UINavigationBar.appearance().barTintColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().barStyle = UIBarStyle.Black
+        
+        let types = UIUserNotificationSettings(forTypes: [.Alert, .Badge],categories: nil)
+        
+          UIApplication.sharedApplication().registerUserNotificationSettings(types)
+          UIApplication.sharedApplication().registerForRemoteNotifications()
+        
+        
         return true
+    }
+    
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        NSLog("Push Plugin register success: %@", deviceToken.description);
+        let aString: String = deviceToken.description
+        let newString = aString.stringByReplacingOccurrencesOfString(" ", withString: "").stringByReplacingOccurrencesOfString("<", withString: "").stringByReplacingOccurrencesOfString(">", withString: "");
+        NSLog("Push Plugin register success: %@", newString);
+        
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        NSLog("failed to register for remote notifications:  (error)")
     }
 
     func applicationWillResignActive(application: UIApplication) {

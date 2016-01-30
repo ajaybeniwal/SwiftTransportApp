@@ -319,7 +319,7 @@
 				INFOPLIST_FILE = TransitFare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ajay.TestApplication.TransitFare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.commonapp.projectpocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -335,7 +335,7 @@
 				INFOPLIST_FILE = TransitFare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ajay.TestApplication.TransitFare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.commonapp.projectpocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
