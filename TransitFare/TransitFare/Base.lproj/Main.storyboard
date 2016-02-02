@@ -150,6 +150,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveBarItem" destination="vGC-qR-Xyi" id="JbX-Q0-6Lb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mA-2d-100" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

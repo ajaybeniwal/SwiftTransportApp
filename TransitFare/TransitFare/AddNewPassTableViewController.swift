@@ -13,15 +13,20 @@ import MBProgressHUD
 
 class AddNewPassTableViewController: UITableViewController {
     var productCollection = [ProductModel]()
+    @IBOutlet var saveBarItem: UIBarButtonItem!
     @IBAction func saveNewPass(sender: AnyObject) {
         print("clicked on save button")
+       
     }
+    
     var cardCollection = [CreditCardModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getPassData()
         getCardData()
+        let font = UIFont.boldSystemFontOfSize(20)
         
+        saveBarItem.setTitleTextAttributes([NSFontAttributeName: font], forState:UIControlState.Normal)
         
     }
     
