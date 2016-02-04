@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		993EAEA51C620B2200899916 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEA41C620B2200899916 /* Material.framework */; };
+		993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */; };
 		994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B71C41C55D77600FC5782 /* Kingfisher.framework */; };
 		998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9261C4C871D00136EDD /* AppDelegate.swift */; };
 		998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9281C4C871D00136EDD /* FirstViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		993EAEA41C620B2200899916 /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
+		993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCreditCardViewController.swift; sourceTree = "<group>"; };
 		994B71C41C55D77600FC5782 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		998BB9231C4C871D00136EDD /* TransitFare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitFare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998BB9261C4C871D00136EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993EAEA51C620B2200899916 /* Material.framework in Frameworks */,
 				999C63E91C59D05A00822ECF /* MBProgressHUD.framework in Frameworks */,
 				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
 				999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */,
@@ -60,6 +65,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				993EAEA41C620B2200899916 /* Material.framework */,
 				999C63E81C59D05A00822ECF /* MBProgressHUD.framework */,
 				999C63E31C5912DA00822ECF /* Model */,
 				999C63E11C58D0E900822ECF /* SwiftyJSON.framework */,
@@ -90,6 +96,7 @@
 				999C63D91C577E8E00822ECF /* AddNewPassTableViewController.swift */,
 				999C63DB1C57B22300822ECF /* APIUtility.swift */,
 				999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */,
+				993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */,
 			);
 			path = TransitFare;
 			sourceTree = "<group>";
@@ -186,6 +193,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 			);
 			outputPaths = (
 			);
@@ -206,6 +214,7 @@
 				999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
+				993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */,
 				999C63E51C59137800822ECF /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

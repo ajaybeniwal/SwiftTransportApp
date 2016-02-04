@@ -24,7 +24,7 @@ class AddNewPassTableViewController: UITableViewController {
         super.viewDidLoad()
         getPassData()
         getCardData()
-        let font = UIFont.boldSystemFontOfSize(20)
+        let font = UIFont.boldSystemFontOfSize(18)
         
         saveBarItem.setTitleTextAttributes([NSFontAttributeName: font], forState:UIControlState.Normal)
         
