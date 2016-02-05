@@ -7,6 +7,9 @@ Below Features are listed in app
 3. Profile (It will list the billing info and personal info and will provide user to make edit to his profile)
 
 
+# Coming Soon
+
+1. Animations on click of add new button to show add new pass and new credit card on plus button
 
 
 
