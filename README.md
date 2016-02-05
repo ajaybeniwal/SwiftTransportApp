@@ -11,6 +11,10 @@ Below Features are listed in app
 
 1. Animations on click of add new button to show add new pass and new credit card on plus button
 
+# Contributing 
+
+1.Fork the repo and issue pull request
+
 
 
 
