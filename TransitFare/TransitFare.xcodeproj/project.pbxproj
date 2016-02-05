@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		993EAEA51C620B2200899916 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEA41C620B2200899916 /* Material.framework */; };
 		993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */; };
+		993EAEA91C645A8800899916 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA81C645A8800899916 /* MyProfileViewController.swift */; };
 		994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B71C41C55D77600FC5782 /* Kingfisher.framework */; };
 		998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9261C4C871D00136EDD /* AppDelegate.swift */; };
 		998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9281C4C871D00136EDD /* FirstViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		993EAEA41C620B2200899916 /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCreditCardViewController.swift; sourceTree = "<group>"; };
+		993EAEA81C645A8800899916 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		994B71C41C55D77600FC5782 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		998BB9231C4C871D00136EDD /* TransitFare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitFare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998BB9261C4C871D00136EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				999C63DB1C57B22300822ECF /* APIUtility.swift */,
 				999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */,
 				993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */,
+				993EAEA81C645A8800899916 /* MyProfileViewController.swift */,
 			);
 			path = TransitFare;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
 				999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */,
+				993EAEA91C645A8800899916 /* MyProfileViewController.swift in Sources */,
 				999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,

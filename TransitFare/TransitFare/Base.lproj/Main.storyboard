@@ -173,6 +173,25 @@
             </objects>
             <point key="canvasLocation" x="1727" y="400"/>
         </scene>
+        <!--My Profile-->
+        <scene sceneID="513-f1-N1Z">
+            <objects>
+                <viewController id="Wh2-LQ-h6x" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Ml-mk-xwp"/>
+                        <viewControllerLayoutGuide type="bottom" id="JsK-Rl-GtC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f9C-S6-s6Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Profile" id="nRr-Jf-T69"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHX-Qn-0TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="1143"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -186,6 +205,7 @@
                     <connections>
                         <segue destination="BV7-h0-uU6" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="IG4-c7-HqI" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="YYt-Ae-lj1" kind="relationship" relationship="viewControllers" id="yH1-SF-xly"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -211,11 +231,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Profile-->
+        <!--AddPass-->
         <scene sceneID="V9y-Cq-fpi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IG4-c7-HqI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="AddPass" image="addpass" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FB2-93-Zhj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -248,10 +268,30 @@
             </objects>
             <point key="canvasLocation" x="2520" y="-34"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="V4n-Ol-YKf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YYt-Ae-lj1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="account" id="uig-QR-4FR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IJL-D1-reu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wh2-LQ-h6x" kind="relationship" relationship="rootViewController" id="2X9-Pv-Gke"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7PM-jq-khZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1119"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MasterCard" width="73" height="44"/>
         <image name="Wallet" width="24" height="24"/>
-        <image name="second" width="30" height="30"/>
+        <image name="account" width="24" height="24"/>
+        <image name="addpass" width="24" height="24"/>
     </resources>
 </document>
