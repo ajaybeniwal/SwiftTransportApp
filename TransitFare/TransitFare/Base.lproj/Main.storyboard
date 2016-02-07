@@ -205,6 +205,7 @@
                     <connections>
                         <segue destination="BV7-h0-uU6" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="IG4-c7-HqI" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="dGw-zB-TVX" kind="relationship" relationship="viewControllers" id="5iD-65-AbO"/>
                         <segue destination="YYt-Ae-lj1" kind="relationship" relationship="viewControllers" id="yH1-SF-xly"/>
                     </connections>
                 </tabBarController>
@@ -285,7 +286,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7PM-jq-khZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1119"/>
+            <point key="canvasLocation" x="778" y="1923"/>
+        </scene>
+        <!--BusTime-->
+        <scene sceneID="Pyy-46-pVg">
+            <objects>
+                <viewController id="Doz-vX-g4g" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gKZ-Uh-RU2"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Yr-Rk-FG9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KCo-K7-lZs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BusTime" id="pM7-mm-0h5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="knW-Qo-qNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="1835"/>
+        </scene>
+        <!--BusTime-->
+        <scene sceneID="k7p-SV-ykW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dGw-zB-TVX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="BusTime" image="bus" id="tTt-49-pDy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xtQ-Nh-Uuh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Doz-vX-g4g" kind="relationship" relationship="rootViewController" id="XLc-Vm-abO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eZ-x3-7eh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1077"/>
         </scene>
     </scenes>
     <resources>
@@ -293,5 +332,6 @@
         <image name="Wallet" width="24" height="24"/>
         <image name="account" width="24" height="24"/>
         <image name="addpass" width="24" height="24"/>
+        <image name="bus" width="24" height="24"/>
     </resources>
 </document>

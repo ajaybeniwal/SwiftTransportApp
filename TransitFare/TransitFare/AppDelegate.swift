@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           UIApplication.sharedApplication().registerUserNotificationSettings(types)
           UIApplication.sharedApplication().registerForRemoteNotifications()
         
+        /* Setting the login controller as root view controler */
+        self.window?.rootViewController = LoginViewController()
+        
         
         return true
     }

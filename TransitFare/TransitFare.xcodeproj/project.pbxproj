@@ -10,6 +10,9 @@
 		993EAEA51C620B2200899916 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEA41C620B2200899916 /* Material.framework */; };
 		993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */; };
 		993EAEA91C645A8800899916 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA81C645A8800899916 /* MyProfileViewController.swift */; };
+		993EAEAC1C66555B00899916 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEAB1C66555B00899916 /* LoginViewController.swift */; };
+		993EAEAE1C6655BE00899916 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEAD1C6655BE00899916 /* SnapKit.framework */; };
+		993EAEB11C66599400899916 /* background-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 993EAEB01C66599400899916 /* background-logo.jpg */; };
 		994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B71C41C55D77600FC5782 /* Kingfisher.framework */; };
 		998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9261C4C871D00136EDD /* AppDelegate.swift */; };
 		998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9281C4C871D00136EDD /* FirstViewController.swift */; };
@@ -30,6 +33,9 @@
 		993EAEA41C620B2200899916 /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCreditCardViewController.swift; sourceTree = "<group>"; };
 		993EAEA81C645A8800899916 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		993EAEAB1C66555B00899916 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		993EAEAD1C6655BE00899916 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		993EAEB01C66599400899916 /* background-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-logo.jpg"; sourceTree = "<group>"; };
 		994B71C41C55D77600FC5782 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		998BB9231C4C871D00136EDD /* TransitFare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitFare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998BB9261C4C871D00136EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 				993EAEA51C620B2200899916 /* Material.framework in Frameworks */,
 				999C63E91C59D05A00822ECF /* MBProgressHUD.framework in Frameworks */,
 				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
+				993EAEAE1C6655BE00899916 /* SnapKit.framework in Frameworks */,
 				999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */,
 				999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -64,9 +71,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		993EAEAF1C66597D00899916 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				993EAEB01C66599400899916 /* background-logo.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				993EAEAF1C66597D00899916 /* Resources */,
+				993EAEAD1C6655BE00899916 /* SnapKit.framework */,
 				993EAEA41C620B2200899916 /* Material.framework */,
 				999C63E81C59D05A00822ECF /* MBProgressHUD.framework */,
 				999C63E31C5912DA00822ECF /* Model */,
@@ -100,6 +117,7 @@
 				999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */,
 				993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */,
 				993EAEA81C645A8800899916 /* MyProfileViewController.swift */,
+				993EAEAB1C66555B00899916 /* LoginViewController.swift */,
 			);
 			path = TransitFare;
 			sourceTree = "<group>";
@@ -177,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993EAEB11C66599400899916 /* background-logo.jpg in Resources */,
 				998BB9331C4C871D00136EDD /* LaunchScreen.storyboard in Resources */,
 				998BB9301C4C871D00136EDD /* Assets.xcassets in Resources */,
 				998BB92E1C4C871D00136EDD /* Main.storyboard in Resources */,
@@ -197,6 +216,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			outputPaths = (
 			);
@@ -219,6 +239,7 @@
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
 				993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */,
+				993EAEAC1C66555B00899916 /* LoginViewController.swift in Sources */,
 				999C63E51C59137800822ECF /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
