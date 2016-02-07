@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     var passwordTextField:UITextField?
     var loginButton:RaisedButton?
     var frostedView :UIView?
+    var registerButton :RaisedButton?
+    var forgotPassword :UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor()
@@ -42,8 +44,9 @@ class LoginViewController: UIViewController {
         self.userNameTextField!.frame = CGRectMake(0, 100, self.view.frame.width,60)
         
         let userNameIconImageView = UIImageView(image: UIImage(named: "username")!.imageWithRenderingMode(.AlwaysTemplate));
-        userNameIconImageView.frame = CGRectMake(0, 0, 32, 32)
+        userNameIconImageView.frame = CGRectMake(30, 10, 24, 24)
         userNameIconImageView.contentMode = .ScaleAspectFit
+        userNameIconImageView.tintColor = MaterialColor.grey.base
         self.userNameTextField!.leftView = userNameIconImageView
         self.userNameTextField!.leftViewMode = .Always
         frostedView!.addSubview(self.userNameTextField!)
@@ -70,9 +73,9 @@ class LoginViewController: UIViewController {
         
         
         let passwordIconImageView = UIImageView(image: UIImage(named: "password")!.imageWithRenderingMode(.AlwaysTemplate));
-        passwordIconImageView.frame = CGRectMake(0, 0, 34, 22)
+        passwordIconImageView.frame = CGRectMake(30, 10, 24, 24)
         passwordIconImageView.contentMode = .ScaleAspectFit
-       
+        passwordIconImageView.tintColor = MaterialColor.grey.base
         
         self.passwordTextField!.leftView = passwordIconImageView
         self.passwordTextField!.leftViewMode = .Always
@@ -86,9 +89,10 @@ class LoginViewController: UIViewController {
             make.height.equalTo(50)
         }
         
-        self.loginButton = RaisedButton(frame: CGRectMake(100, 300, 200, 45))
+        self.loginButton = RaisedButton()
         self.loginButton!.setTitle("Login", forState: .Normal)
         self.loginButton!.backgroundColor = MaterialColor.pink.base
+        self.loginButton!.alpha = 0.8
         frostedView!.addSubview(self.loginButton!)
         self.loginButton?.addTarget(self, action: Selector("loginClick:"), forControlEvents: .TouchUpInside)
         
@@ -98,6 +102,31 @@ class LoginViewController: UIViewController {
             make.width.equalTo(250)
             make.height.equalTo(50)
         }
+        
+        self.registerButton = RaisedButton()
+        self.registerButton!.setTitle("Register", forState: .Normal)
+        self.registerButton!.backgroundColor = MaterialColor.blue.base
+        self.registerButton!.alpha = 0.8
+        frostedView!.addSubview(self.registerButton!)
+        self.registerButton?.addTarget(self, action: Selector("registerClick:"), forControlEvents: .TouchUpInside)
+        self.registerButton!.snp_makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.loginButton!.snp_bottom).offset(20)
+            make.centerX.equalTo(self.frostedView!)
+            make.width.equalTo(250)
+            make.height.equalTo(50)
+        }
+        
+        self.forgotPassword = UILabel()
+        self.forgotPassword!.text = "Forgot your password?"
+        self.forgotPassword?.textColor = MaterialColor.white
+        self.forgotPassword?.userInteractionEnabled = true;
+        frostedView!.addSubview(self.forgotPassword!)
+        self.forgotPassword!.snp_makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.registerButton!.snp_bottom).offset(20)
+            make.centerX.equalTo(self.frostedView!)
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -108,6 +137,9 @@ class LoginViewController: UIViewController {
     
     func loginClick(sender:UIButton){
         print("clicked on loginbutton")
+    }
+    func registerClick(sender:UIButton){
+        print("clicked on register")
     }
 
     /*
