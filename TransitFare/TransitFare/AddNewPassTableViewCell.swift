@@ -9,7 +9,9 @@
 import UIKit
 
 class AddNewPassTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet var cardImageLeft: NSLayoutConstraint!
+    @IBOutlet var cardNumberLeft: NSLayoutConstraint!
     @IBOutlet var cardTypeView: UIImageView!
     @IBOutlet var cardNumber: UILabel!
     override func awakeFromNib() {

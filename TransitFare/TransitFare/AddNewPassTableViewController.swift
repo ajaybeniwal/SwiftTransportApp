@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MBProgressHUD
+import SnapKit
 
 class AddNewPassTableViewController: UITableViewController {
     var productCollection = [ProductModel]()
@@ -19,13 +20,15 @@ class AddNewPassTableViewController: UITableViewController {
        
     }
     
+   
     var cardCollection = [CreditCardModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 160.0
         getPassData()
         getCardData()
         let font = UIFont.boldSystemFontOfSize(18)
-        
         saveBarItem.setTitleTextAttributes([NSFontAttributeName: font], forState:UIControlState.Normal)
         
     }
@@ -39,7 +42,7 @@ class AddNewPassTableViewController: UITableViewController {
     
     func getCardData() -> Void{
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
+        Alamofire.request(.GET, APIUtility.getEndPointURL("customer/billingInfo")).responseJSON(completionHandler:
             {
                 (response) -> Void in
                 if let value = response.result.value {
@@ -47,7 +50,7 @@ class AddNewPassTableViewController: UITableViewController {
                     let data = json["data"]
                     for (_,subJson):(String, JSON) in data {
                         let _cardModel = CreditCardModel(customerCode:subJson["customerCode"].string!,
-                            cardNumber:subJson["number"].string!,cardType:subJson["card_type"].string!)
+                            cardNumber:subJson["card"]["number"].string!,cardType:subJson["card"]["card_type"].string!)
                         self.cardCollection.append(_cardModel)
                         
                     }
@@ -56,6 +59,7 @@ class AddNewPassTableViewController: UITableViewController {
                     
                 }
                 else{
+                    print("error while fetching the records")
                     progressHUD.hide(true)
                 }
             }
@@ -110,6 +114,9 @@ class AddNewPassTableViewController: UITableViewController {
         
         if(indexPath.section==0){
             cell.cardNumber.text = self.productCollection[indexPath.row].productName
+            cell.cardTypeView.hidden = true
+            cell.cardImageLeft.constant=0
+            cell.cardNumberLeft.constant=16
             
         }
         else{

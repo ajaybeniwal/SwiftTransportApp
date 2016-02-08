@@ -10,10 +10,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     var deviceToken :String?
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let textAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
@@ -24,11 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let types = UIUserNotificationSettings(forTypes: [.Alert, .Badge],categories: nil)
         
-          UIApplication.sharedApplication().registerUserNotificationSettings(types)
-          UIApplication.sharedApplication().registerForRemoteNotifications()
+        UIApplication.sharedApplication().registerUserNotificationSettings(types)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
         
         /* Setting the login controller as root view controler */
-        self.window?.rootViewController = LoginViewController()
+        
+        if(!TransitFareClient.sharedInstance.isLogin){
+           self.window?.rootViewController = LoginViewController() 
+        }
+        
+        
         
         
         return true
@@ -50,27 +55,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recived remote notification");
     }
-
+    
     func applicationWillResignActive(application: UIApplication) {
-       
+        
     }
-
+    
     func applicationDidEnterBackground(application: UIApplication) {
-       
+        
     }
-
+    
     func applicationWillEnterForeground(application: UIApplication) {
         
     }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
         
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
-       
+        
     }
-
-
+    
+    
 }
 

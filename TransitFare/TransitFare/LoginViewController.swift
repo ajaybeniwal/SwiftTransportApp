@@ -13,6 +13,7 @@ import Material
 import Alamofire
 
 class LoginViewController: UIViewController {
+   let kUserName = "me.fin.username"
     var backgroundImageView : UIImageView?
     var userNameTextField:UITextField?
     var passwordTextField:UITextField?
@@ -32,7 +33,7 @@ class LoginViewController: UIViewController {
         frostedView!.frame = self.view.frame
         self.view.addSubview(frostedView!)
         
-     
+        
         
         self.userNameTextField = UITextField()
         self.userNameTextField!.textColor = UIColor.blackColor()
@@ -56,7 +57,7 @@ class LoginViewController: UIViewController {
             make.top.equalTo(self.frostedView!).offset(150)
             make.trailing.equalTo(self.frostedView!)
             make.leading.equalTo(self.frostedView!)
-           
+            
             make.height.equalTo(50)
         }
         
@@ -70,7 +71,7 @@ class LoginViewController: UIViewController {
         self.passwordTextField!.layer.borderColor = UIColor(white: 1, alpha: 0.8).CGColor;
         self.passwordTextField!.placeholder = "Password"
         self.passwordTextField!.clearButtonMode = .Always
-         self.passwordTextField!.frame = CGRectMake(0, 160, self.view.frame.width,60)
+        self.passwordTextField!.frame = CGRectMake(0, 160, self.view.frame.width,60)
         
         
         let passwordIconImageView = UIImageView(image: UIImage(named: "password")!.imageWithRenderingMode(.AlwaysTemplate));
@@ -86,7 +87,7 @@ class LoginViewController: UIViewController {
             make.top.equalTo(self.userNameTextField!.snp_bottom).offset(0)
             make.centerX.equalTo(self.frostedView!)
             make.leading.equalTo(self.frostedView!)
-
+            
             make.height.equalTo(50)
         }
         
@@ -130,7 +131,7 @@ class LoginViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -143,28 +144,31 @@ class LoginViewController: UIViewController {
             "password": "honda@1234567",
             "origin": "prp"
         ]
-        Alamofire.request(.POST, "https://portal.transitfare.com/login", parameters: parameters, encoding: .JSON)
-            .response { request, response, data, error in
-                print(request)
-                print(response)
-                print(data)
-                print(error)
+        Alamofire.request(.POST, "https://portal.transitfare.com/login", parameters: parameters, encoding: .JSON).responseJSON(completionHandler:{
+            (response) -> Void in
+            if let _ = response.result.value {
+                TransitFareSetting.sharedInstance[self.kUserName] = "ajaysingh98711@gmail.com"
                 progressHUD.hide(true)
-        }
+            }
+            else{
+                progressHUD.hide(true)
+            }
+        })
+        
     }
     func registerClick(sender:UIButton){
         print("clicked on register")
         self.presentViewController(RegisterViewController(), animated: true, completion: nil)
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
