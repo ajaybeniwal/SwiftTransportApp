@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import MBProgressHUD
 import Material
+import Alamofire
 
 class LoginViewController: UIViewController {
     var backgroundImageView : UIImageView?
@@ -136,10 +137,24 @@ class LoginViewController: UIViewController {
     }
     
     func loginClick(sender:UIButton){
-        print("clicked on loginbutton")
+        let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let parameters = [
+            "username": "ajaysingh98711@gmail.com",
+            "password": "honda@1234567",
+            "origin": "prp"
+        ]
+        Alamofire.request(.POST, "https://portal.transitfare.com/login", parameters: parameters, encoding: .JSON)
+            .response { request, response, data, error in
+                print(request)
+                print(response)
+                print(data)
+                print(error)
+                progressHUD.hide(true)
+        }
     }
     func registerClick(sender:UIButton){
         print("clicked on register")
+        self.presentViewController(RegisterViewController(), animated: true, completion: nil)
     }
 
     /*
