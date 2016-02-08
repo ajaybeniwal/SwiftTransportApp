@@ -117,6 +117,7 @@ class AddNewPassTableViewController: UITableViewController {
             cell.cardTypeView.hidden = true
             cell.cardImageLeft.constant=0
             cell.cardNumberLeft.constant=16
+          
             
         }
         else{

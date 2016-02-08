@@ -2,8 +2,8 @@
 //  AddNewCreditCardViewController.swift
 //  TransitFare
 //
-//  Created by ajaybeniwal203 on 3/2/16.
-//  Copyright © 2016 ajaybeniwal203. All rights reserved.
+//  Created by ajaybeniwal303 on 3/2/16.
+//  Copyright © 3016 ajaybeniwal303. All rights reserved.
 //
 
 import UIKit
@@ -21,6 +21,7 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     private var scrollView: UIScrollView!
     private var uiView :UIView!
     private var saveButton: RaisedButton!
+    private var  creditCardNumber: TextField!
     @IBAction func cancelPopUp(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -33,9 +34,9 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         prepareCVV()
         prepareState()
         prepareCountry()
+        prepareZipCode()
         prepareAddressLineOne()
         prepareAddressLineTwo()
-        prepareZipCode()
         prepareRaisedButton()
         // Do any additional setup after loading the view.
     }
@@ -46,14 +47,14 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func prepareScrollView(){
         scrollView = UIScrollView(frame:CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
-        uiView = UIView(frame:CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height+200))
+        uiView = UIView(frame:CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height+300))
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(uiView)
     }
     
     func prepareCardNumber(){
         
-        let creditCardNumber: TextField = TextField(frame: CGRectMake(10, 70, self.view.bounds.width-20, 24))
+        creditCardNumber = TextField()
         creditCardNumber.placeholder = "Card Number"
         creditCardNumber.font = RobotoFont.regularWithSize(16)
         creditCardNumber.textColor = MaterialColor.black
@@ -64,11 +65,18 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         creditCardNumber.titleLabelActiveColor = MaterialColor.blue.accent3
         creditCardNumber.clearButtonMode = .WhileEditing
         self.uiView.addSubview(creditCardNumber)
-        
+        creditCardNumber.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.uiView!).offset(30)
+            make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
+
     }
     
     private func prepareExpiryMonth(){
-        expiryMonth = TextField(frame: CGRectMake(10, 140, view.bounds.width-20, 24))
+        expiryMonth = TextField()
         expiryMonth.placeholder = "Expiry Month"
         expiryMonth.font = RobotoFont.regularWithSize(16)
         expiryMonth.textColor = MaterialColor.black
@@ -79,10 +87,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         expiryMonth.titleLabelActiveColor = MaterialColor.blue.accent3
         expiryMonth.clearButtonMode = .WhileEditing
          self.uiView.addSubview(expiryMonth)
+        expiryMonth.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.creditCardNumber.snp_bottom).offset(30)
+             make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     private func prepareExpiryYear(){
-        expiryYear = TextField(frame: CGRectMake(10, 210, view.bounds.width-20, 24))
+        expiryYear = TextField()
         expiryYear.placeholder = "Expiry Year"
         expiryYear.font = RobotoFont.regularWithSize(16)
         expiryYear.textColor = MaterialColor.black
@@ -93,10 +108,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         expiryYear.titleLabelActiveColor = MaterialColor.blue.accent3
         expiryYear.clearButtonMode = .WhileEditing
          self.uiView.addSubview(expiryYear)
+        expiryYear.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.expiryMonth.snp_bottom).offset(30)
+             make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     private func prepareCVV(){
-        cvv = TextField(frame: CGRectMake(10, 280, view.bounds.width-20, 24))
+        cvv = TextField()
         cvv.placeholder = "Security Code"
         cvv.font = RobotoFont.regularWithSize(16)
         cvv.textColor = MaterialColor.black
@@ -107,10 +129,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         cvv.titleLabelActiveColor = MaterialColor.blue.accent3
         cvv.clearButtonMode = .WhileEditing
         self.uiView.addSubview(cvv)
+        cvv.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.expiryYear.snp_bottom).offset(30)
+             make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     func prepareState(){
-        state = TextField(frame: CGRectMake(10, 350, view.bounds.width-20, 24))
+        state = TextField()
         state.placeholder = "State"
         state.font = RobotoFont.regularWithSize(16)
         state.textColor = MaterialColor.black
@@ -121,10 +150,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         state.titleLabelActiveColor = MaterialColor.blue.accent3
         state.clearButtonMode = .WhileEditing
          self.uiView.addSubview(state)
+        state.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.cvv.snp_bottom).offset(30)
+            make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     func prepareCountry(){
-        country = TextField(frame: CGRectMake(10, 420, view.bounds.width-20, 24))
+        country = TextField()
         country.placeholder = "Country"
         country.font = RobotoFont.regularWithSize(16)
         country.textColor = MaterialColor.black
@@ -135,10 +171,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         country.titleLabelActiveColor = MaterialColor.blue.accent3
         country.clearButtonMode = .WhileEditing
         self.uiView.addSubview(country)
+        country.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.state.snp_bottom).offset(30)
+            make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     func prepareZipCode(){
-        zipCode = TextField(frame: CGRectMake(10, 490, view.bounds.width-20, 24))
+        zipCode = TextField()
         zipCode.placeholder = "Zip Code"
         zipCode.font = RobotoFont.regularWithSize(16)
         zipCode.textColor = MaterialColor.black
@@ -149,10 +192,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         zipCode.titleLabelActiveColor = MaterialColor.blue.accent3
         zipCode.clearButtonMode = .WhileEditing
         self.uiView.addSubview(zipCode)
+        zipCode.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.country.snp_bottom).offset(30)
+            make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     func prepareAddressLineOne(){
-        addressLineOne = TextField(frame: CGRectMake(10, 560, view.bounds.width-20, 24))
+        addressLineOne = TextField()
         addressLineOne.placeholder = "Address Line One"
         addressLineOne.font = RobotoFont.regularWithSize(16)
         addressLineOne.textColor = MaterialColor.black
@@ -163,10 +213,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         addressLineOne.titleLabelActiveColor = MaterialColor.blue.accent3
         addressLineOne.clearButtonMode = .WhileEditing
         self.uiView.addSubview(addressLineOne)
+        addressLineOne.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.zipCode.snp_bottom).offset(30)
+            make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     func prepareAddressLineTwo(){
-        addressLineTwo = TextField(frame: CGRectMake(10, 630, view.bounds.width-20, 24))
+        addressLineTwo = TextField()
         addressLineTwo.placeholder = "Address Line Two"
         addressLineTwo.font = RobotoFont.regularWithSize(16)
         addressLineTwo.textColor = MaterialColor.black
@@ -177,14 +234,28 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         addressLineTwo.titleLabelActiveColor = MaterialColor.blue.accent3
         addressLineTwo.clearButtonMode = .WhileEditing
         self.uiView.addSubview(addressLineTwo)
+        addressLineTwo.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.addressLineOne.snp_bottom).offset(30)
+             make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     func prepareRaisedButton(){
-        saveButton = RaisedButton(frame: CGRectMake(10, 700, view.bounds.width-20, 65))
+        saveButton = RaisedButton()
         saveButton.setTitle("Save", forState: .Normal)
         saveButton.backgroundColor = MaterialColor.blue.base
         saveButton.titleLabel!.font = RobotoFont.mediumWithSize(18)
         self.uiView.addSubview(saveButton)
+        saveButton.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.uiView!)
+            make.top.equalTo(self.addressLineTwo.snp_bottom).offset(30)
+            make.trailing.equalTo(self.uiView!).offset(-10)
+            make.leading.equalTo(self.uiView!).offset(10)
+            make.height.equalTo(50)
+        }
     }
     
     override func didReceiveMemoryWarning() {
