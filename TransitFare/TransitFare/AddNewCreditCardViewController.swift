@@ -74,26 +74,12 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func hideKeyboard(notification:NSNotification){
         
-        let contentInsets = UIEdgeInsetsMake(0.0, 0, 50.0, 0.0);
-        self.scrollView.contentInset = contentInsets;
-        self.scrollView.scrollIndicatorInsets = contentInsets;
+        
+        
     }
     
     func showKeyboard(notification:NSNotification){
-        if let notificationValue = notification.userInfo{
-           let size = notificationValue[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size
-           var bkgndRect = activeField.superview?.frame
-           bkgndRect!.size.height += size!.height
-            
-           activeField.superview?.frame = bkgndRect!
-           self.scrollView.setContentOffset(CGPointMake(0.0, activeField.frame.origin.y-size!.height), animated: true)
-         
-            
-        }
-        else{
-            print("failed to unwrap optional value")
-        }
-        
+               
        
     }
     
