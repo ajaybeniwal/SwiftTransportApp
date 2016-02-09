@@ -82,16 +82,12 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     func showKeyboard(notification:NSNotification){
         if let notificationValue = notification.userInfo{
            let size = notificationValue[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size
-           let contentInsets = UIEdgeInsetsMake(0.0, 0.0, size!.height, 0.0);
-           self.scrollView.contentInset = contentInsets;
-           self.scrollView.scrollIndicatorInsets = contentInsets;
-            var aRect = self.view.frame;
-            aRect.size.height -= size!.height;
-            if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
-                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
-                
-            }
+           var bkgndRect = activeField.superview?.frame
+           bkgndRect!.size.height += size!.height
             
+           activeField.superview?.frame = bkgndRect!
+           self.scrollView.setContentOffset(CGPointMake(0.0, activeField.frame.origin.y-size!.height), animated: true)
+         
             
         }
         else{
