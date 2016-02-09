@@ -22,11 +22,17 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     private var uiView :UIView!
     private var saveButton: RaisedButton!
     private var  creditCardNumber: TextField!
+    private var activeField:UITextField!
     @IBAction func cancelPopUp(sender: AnyObject) {
+        self.view.endEditing(true)
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupKeyboardListeners()
         prepareScrollView()
         prepareCardNumber()
         prepareExpiryMonth()
@@ -38,11 +44,52 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         prepareAddressLineOne()
         prepareAddressLineTwo()
         prepareRaisedButton()
+        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        self.scrollView.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.view.endEditing(true)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
+    }
+    
+    
+    func handleTap(recognizer: UITapGestureRecognizer){
+        self.view.endEditing(true)
+    }
+    
+    
+    
     override func viewDidLayoutSubviews() {
         self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.uiView.frame.size.height);
+    }
+    
+    func setupKeyboardListeners(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("showKeyboard:"), name: UIKeyboardDidShowNotification, object: nil)
+    }
+    
+    func showKeyboard(notification:NSNotification){
+        if let notificationValue = notification.userInfo{
+           let size = notificationValue[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size
+           let contentInsets = UIEdgeInsetsMake(0.0, 0.0, size!.height, 0.0);
+           self.scrollView.contentInset = contentInsets;
+           self.scrollView.scrollIndicatorInsets = contentInsets;
+            var aRect = self.view.frame;
+            aRect.size.height -= size!.height;
+            if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+                
+            }
+            
+            
+        }
+        else{
+            print("failed to unwrap optional value")
+        }
+        
+       
     }
     
     func prepareScrollView(){
@@ -55,10 +102,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     func prepareCardNumber(){
         
         creditCardNumber = TextField()
+        creditCardNumber.returnKeyType = UIReturnKeyType.Next
         creditCardNumber.placeholder = "Card Number"
         creditCardNumber.font = RobotoFont.regularWithSize(16)
         creditCardNumber.textColor = MaterialColor.black
-        
+        creditCardNumber.delegate = self
         creditCardNumber.titleLabel = UILabel()
         creditCardNumber.titleLabel!.font = RobotoFont.mediumWithSize(12)
         creditCardNumber.titleLabelColor = MaterialColor.grey.lighten1
@@ -77,10 +125,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     private func prepareExpiryMonth(){
         expiryMonth = TextField()
+        expiryMonth.returnKeyType = UIReturnKeyType.Next
         expiryMonth.placeholder = "Expiry Month"
         expiryMonth.font = RobotoFont.regularWithSize(16)
         expiryMonth.textColor = MaterialColor.black
-        
+        expiryMonth.delegate = self
         expiryMonth.titleLabel = UILabel()
         expiryMonth.titleLabel!.font = RobotoFont.mediumWithSize(12)
         expiryMonth.titleLabelColor = MaterialColor.grey.base
@@ -98,10 +147,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     private func prepareExpiryYear(){
         expiryYear = TextField()
+        expiryYear.returnKeyType = UIReturnKeyType.Next
         expiryYear.placeholder = "Expiry Year"
         expiryYear.font = RobotoFont.regularWithSize(16)
         expiryYear.textColor = MaterialColor.black
-        
+        expiryYear.delegate = self
         expiryYear.titleLabel = UILabel()
         expiryYear.titleLabel!.font = RobotoFont.mediumWithSize(12)
         expiryYear.titleLabelColor = MaterialColor.grey.base
@@ -119,10 +169,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     private func prepareCVV(){
         cvv = TextField()
+        cvv.returnKeyType = UIReturnKeyType.Next
         cvv.placeholder = "Security Code"
         cvv.font = RobotoFont.regularWithSize(16)
         cvv.textColor = MaterialColor.black
-        
+        cvv.delegate = self
         cvv.titleLabel = UILabel()
         cvv.titleLabel!.font = RobotoFont.mediumWithSize(12)
         cvv.titleLabelColor = MaterialColor.grey.base
@@ -140,10 +191,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func prepareState(){
         state = TextField()
+        state.returnKeyType = UIReturnKeyType.Next
         state.placeholder = "State"
         state.font = RobotoFont.regularWithSize(16)
         state.textColor = MaterialColor.black
-        
+        state.delegate = self
         state.titleLabel = UILabel()
         state.titleLabel!.font = RobotoFont.mediumWithSize(12)
         state.titleLabelColor = MaterialColor.grey.base
@@ -161,10 +213,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func prepareCountry(){
         country = TextField()
+        country.returnKeyType = UIReturnKeyType.Next
         country.placeholder = "Country"
         country.font = RobotoFont.regularWithSize(16)
         country.textColor = MaterialColor.black
-        
+        country.delegate = self
         country.titleLabel = UILabel()
         country.titleLabel!.font = RobotoFont.mediumWithSize(12)
         country.titleLabelColor = MaterialColor.grey.base
@@ -182,10 +235,12 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func prepareZipCode(){
         zipCode = TextField()
+        zipCode.returnKeyType = UIReturnKeyType.Next
+
         zipCode.placeholder = "Zip Code"
         zipCode.font = RobotoFont.regularWithSize(16)
         zipCode.textColor = MaterialColor.black
-        
+        zipCode.delegate = self
         zipCode.titleLabel = UILabel()
         zipCode.titleLabel!.font = RobotoFont.mediumWithSize(12)
         zipCode.titleLabelColor = MaterialColor.grey.base
@@ -203,10 +258,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func prepareAddressLineOne(){
         addressLineOne = TextField()
+        addressLineOne.returnKeyType = UIReturnKeyType.Next
         addressLineOne.placeholder = "Address Line One"
         addressLineOne.font = RobotoFont.regularWithSize(16)
         addressLineOne.textColor = MaterialColor.black
-        
+        addressLineOne.delegate = self
         addressLineOne.titleLabel = UILabel()
         addressLineOne.titleLabel!.font = RobotoFont.mediumWithSize(12)
         addressLineOne.titleLabelColor = MaterialColor.grey.base
@@ -224,10 +280,11 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func prepareAddressLineTwo(){
         addressLineTwo = TextField()
+        addressLineTwo.returnKeyType = UIReturnKeyType.Done
         addressLineTwo.placeholder = "Address Line Two"
         addressLineTwo.font = RobotoFont.regularWithSize(16)
         addressLineTwo.textColor = MaterialColor.black
-        
+        addressLineTwo.delegate = self
         addressLineTwo.titleLabel = UILabel()
         addressLineTwo.titleLabel!.font = RobotoFont.mediumWithSize(12)
         addressLineTwo.titleLabelColor = MaterialColor.grey.base
@@ -256,11 +313,53 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
             make.leading.equalTo(self.uiView!).offset(10)
             make.height.equalTo(50)
         }
+         saveButton.addTarget(self, action: Selector("saveNewCreditCard:"), forControlEvents: .TouchUpInside)
     }
+    
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func textFieldDidBeginEditing(textField: UITextField){
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField){
+        activeField = nil;
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(textField == self.creditCardNumber){
+            self.expiryMonth.becomeFirstResponder()
+        }
+        else if(textField == self.expiryMonth){
+            self.expiryYear.becomeFirstResponder()
+        }
+        else if (textField == self.expiryYear){
+            self.cvv.becomeFirstResponder()
+        }
+        else if (textField == self.cvv){
+            self.state.becomeFirstResponder()
+        }
+        else if (textField == self.state){
+            self.country.becomeFirstResponder()
+        }
+        else if (textField == self.country){
+            self.zipCode.becomeFirstResponder()
+        }
+        else if(textField == self.zipCode){
+            self.addressLineOne.becomeFirstResponder()
+        }
+        else if (textField == self.addressLineOne){
+            self.addressLineTwo.becomeFirstResponder()
+        }
+        return true
+    }
+    
+    func saveNewCreditCard(sender:UIButton){
+        print("Hello")
     }
     
     
