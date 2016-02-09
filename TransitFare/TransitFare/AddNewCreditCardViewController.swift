@@ -53,6 +53,7 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
         super.viewDidDisappear(animated)
         self.view.endEditing(true)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
     }
     
     
@@ -68,6 +69,14 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func setupKeyboardListeners(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("showKeyboard:"), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("hideKeyboard:"), name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func hideKeyboard(notification:NSNotification){
+        
+        let contentInsets = UIEdgeInsetsZero;
+        self.scrollView.contentInset = contentInsets;
+        self.scrollView.scrollIndicatorInsets = contentInsets;
     }
     
     func showKeyboard(notification:NSNotification){
