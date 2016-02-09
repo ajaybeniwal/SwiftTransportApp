@@ -74,7 +74,7 @@ class AddNewCreditCardViewController: UIViewController, TextFieldDelegate {
     
     func hideKeyboard(notification:NSNotification){
         
-        let contentInsets = UIEdgeInsetsZero;
+        let contentInsets = UIEdgeInsetsMake(0.0, 0, 50.0, 0.0);
         self.scrollView.contentInset = contentInsets;
         self.scrollView.scrollIndicatorInsets = contentInsets;
     }
