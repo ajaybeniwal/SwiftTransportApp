@@ -10,6 +10,12 @@ import UIKit
 
 class AddNewPassTableViewCell: UITableViewCell {
     
+    @IBOutlet var addCardLeft: NSLayoutConstraint!
+    @IBAction func addNewCard(sender: AnyObject) {
+        tapNewCreditCard?(self)
+    }
+    var tapNewCreditCard: (UITableViewCell -> Void)?
+    @IBOutlet var addNewCardButton: UIButton!
     @IBOutlet var cardImageLeft: NSLayoutConstraint!
     @IBOutlet var cardNumberLeft: NSLayoutConstraint!
     @IBOutlet var cardTypeView: UIImageView!

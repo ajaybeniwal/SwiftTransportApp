@@ -45,7 +45,7 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func addButtonClick(sender: AnyObject) {
-        self.performSegueWithIdentifier("addNewCreditCardId", sender: sender)
+       
     }
     
     

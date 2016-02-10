@@ -88,7 +88,6 @@
                         <outlet property="addNewButton" destination="OkU-3D-hkK" id="o10-ly-AM0"/>
                         <outlet property="cardContainer" destination="cH3-k7-sj2" id="Jct-Vp-ywV"/>
                         <outlet property="passCacheImageView" destination="iqo-rS-IVZ" id="e4r-Xd-F8S"/>
-                        <segue destination="Svj-XZ-7N3" kind="presentation" identifier="addNewCreditCardId" id="SKr-5K-dUZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -149,16 +148,29 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKI-Z0-Wwn">
+                                            <rect key="frame" x="169" y="8" width="153" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Add New Credit Card"/>
+                                            <connections>
+                                                <action selector="addNewCard:" destination="5IL-6Z-cQT" eventType="touchUpInside" id="AJF-7r-HAV"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="h8d-vp-N0D" firstAttribute="leading" secondItem="sQX-eJ-VG8" secondAttribute="leading" constant="15" id="G8K-uY-HEu"/>
                                         <constraint firstItem="h8d-vp-N0D" firstAttribute="top" secondItem="sQX-eJ-VG8" secondAttribute="top" constant="8" id="MD5-nC-W6C"/>
+                                        <constraint firstItem="vKI-Z0-Wwn" firstAttribute="top" secondItem="sQX-eJ-VG8" secondAttribute="top" constant="8" id="cJp-jc-Jsa"/>
                                         <constraint firstItem="dD5-Dn-UUI" firstAttribute="leading" secondItem="sQX-eJ-VG8" secondAttribute="leading" constant="98" id="fgC-eR-UKN"/>
                                         <constraint firstItem="dD5-Dn-UUI" firstAttribute="top" secondItem="sQX-eJ-VG8" secondAttribute="top" constant="10" id="fys-MX-o7m"/>
+                                        <constraint firstAttribute="bottom" secondItem="vKI-Z0-Wwn" secondAttribute="bottom" constant="24" id="obW-ze-wWM"/>
                                         <constraint firstAttribute="bottom" secondItem="dD5-Dn-UUI" secondAttribute="bottom" constant="31" id="oqd-CR-qa5"/>
+                                        <constraint firstItem="vKI-Z0-Wwn" firstAttribute="leading" secondItem="sQX-eJ-VG8" secondAttribute="leading" constant="169" id="wpB-iX-6uh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addCardLeft" destination="wpB-iX-6uh" id="OUb-xO-KTS"/>
+                                    <outlet property="addNewCardButton" destination="vKI-Z0-Wwn" id="qhN-68-jPD"/>
                                     <outlet property="cardImageLeft" destination="G8K-uY-HEu" id="Xyv-eq-pUq"/>
                                     <outlet property="cardNumber" destination="dD5-Dn-UUI" id="lNP-oc-hhu"/>
                                     <outlet property="cardNumberLeft" destination="fgC-eR-UKN" id="2TX-59-9ff"/>
@@ -180,11 +192,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="saveBarItem" destination="vGC-qR-Xyi" id="JbX-Q0-6Lb"/>
+                        <segue destination="Svj-XZ-7N3" kind="presentation" identifier="addCardFromPass" id="fuL-V5-Gh8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mA-2d-100" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="400"/>
+            <point key="canvasLocation" x="1503" y="390"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="513-f1-N1Z">

@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import MBProgressHUD
 import SnapKit
+import Material
 
 class AddNewPassTableViewController: UITableViewController {
     var productCollection = [ProductModel]()
@@ -86,7 +87,7 @@ class AddNewPassTableViewController: UITableViewController {
                     
                 }
                 else{
-                    print(response)
+                   
                     print("error while fetching the records")
                 }
             }
@@ -95,32 +96,36 @@ class AddNewPassTableViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0){
             return self.productCollection.count
         }
-        if(section==1){
+        else if(section==1){
             return self.cardCollection.count
         }
-    return 0
+        
+        return 1
         
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NewPassTableCell", forIndexPath: indexPath) as! AddNewPassTableViewCell
+        cell.tapNewCreditCard = {(user) in
+             self.performSegueWithIdentifier("addCardFromPass", sender: user)
+        }
         
         if(indexPath.section==0){
             cell.cardNumber.text = self.productCollection[indexPath.row].productName
             cell.cardTypeView.hidden = true
             cell.cardImageLeft.constant=0
             cell.cardNumberLeft.constant=16
-          
-            
+            cell.cardNumber.hidden = false;
+            cell.addNewCardButton.hidden = true
         }
-        else{
+        else if (indexPath.section==1){
             switch(self.cardCollection[indexPath.row].cardType){
                 case "VI":
                 cell.cardTypeView.image = UIImage(named: "Visa")
@@ -132,12 +137,22 @@ class AddNewPassTableViewController: UITableViewController {
                 cell.cardTypeView.image = UIImage(named: "Amex")
                 break
             }
+            cell.cardNumber.hidden = false;
             cell.cardNumber.text = self.cardCollection[indexPath.row].cardNumber
+            cell.cardTypeView.hidden = false
+            cell.cardImageLeft.constant=15
+            cell.cardNumberLeft.constant=98
+            cell.addNewCardButton.hidden = true
         }
-        
-        
-        
-        
+        else if(indexPath.section==2){
+              cell.cardTypeView.hidden = true
+              cell.cardNumber.hidden = true
+              cell.cardImageLeft.constant = 0
+              cell.cardNumberLeft.constant = 0
+              cell.addNewCardButton.hidden = false
+              cell.addCardLeft.constant = 15
+            
+        }
         return cell
     }
     
@@ -152,7 +167,7 @@ class AddNewPassTableViewController: UITableViewController {
             sectionTitle = "Select a credit card"
             break;
         default:
-            sectionTitle = ""
+            sectionTitle = "0"
             break;
         }
         return sectionTitle
@@ -160,7 +175,13 @@ class AddNewPassTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44
+        if(section==2){
+            return 0
+        }
+        else{
+            return 44
+        }
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
