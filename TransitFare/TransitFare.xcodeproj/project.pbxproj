@@ -17,6 +17,9 @@
 		993EAEB61C68693D00899916 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEB51C68693D00899916 /* HomeViewController.swift */; };
 		993EAEB81C68711500899916 /* TransitFareSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEB71C68711500899916 /* TransitFareSetting.swift */; };
 		993EAEBA1C68763500899916 /* TransitFareClientSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEB91C68763500899916 /* TransitFareClientSetting.swift */; };
+		993EAF141C71E28D00899916 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAF131C71E28D00899916 /* Eureka.framework */; };
+		993EAF171C72B59200899916 /* CountryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAF161C72B59100899916 /* CountryEnum.swift */; };
+		993EAF191C73524100899916 /* BusTimingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAF181C73524100899916 /* BusTimingViewController.swift */; };
 		994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B71C41C55D77600FC5782 /* Kingfisher.framework */; };
 		998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9261C4C871D00136EDD /* AppDelegate.swift */; };
 		998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9281C4C871D00136EDD /* FirstViewController.swift */; };
@@ -44,6 +47,9 @@
 		993EAEB51C68693D00899916 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		993EAEB71C68711500899916 /* TransitFareSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitFareSetting.swift; sourceTree = "<group>"; };
 		993EAEB91C68763500899916 /* TransitFareClientSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitFareClientSetting.swift; sourceTree = "<group>"; };
+		993EAF131C71E28D00899916 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		993EAF161C72B59100899916 /* CountryEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryEnum.swift; sourceTree = "<group>"; };
+		993EAF181C73524100899916 /* BusTimingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusTimingViewController.swift; sourceTree = "<group>"; };
 		994B71C41C55D77600FC5782 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		998BB9231C4C871D00136EDD /* TransitFare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitFare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998BB9261C4C871D00136EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				993EAEA51C620B2200899916 /* Material.framework in Frameworks */,
+				993EAF141C71E28D00899916 /* Eureka.framework in Frameworks */,
 				999C63E91C59D05A00822ECF /* MBProgressHUD.framework in Frameworks */,
 				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
 				993EAEAE1C6655BE00899916 /* SnapKit.framework in Frameworks */,
@@ -90,6 +97,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				993EAF131C71E28D00899916 /* Eureka.framework */,
 				993EAEAF1C66597D00899916 /* Resources */,
 				993EAEAD1C6655BE00899916 /* SnapKit.framework */,
 				993EAEA41C620B2200899916 /* Material.framework */,
@@ -130,6 +138,7 @@
 				993EAEB51C68693D00899916 /* HomeViewController.swift */,
 				993EAEB71C68711500899916 /* TransitFareSetting.swift */,
 				993EAEB91C68763500899916 /* TransitFareClientSetting.swift */,
+				993EAF181C73524100899916 /* BusTimingViewController.swift */,
 			);
 			path = TransitFare;
 			sourceTree = "<group>";
@@ -139,6 +148,7 @@
 			children = (
 				999C63E41C59137800822ECF /* Product.swift */,
 				999C63E61C5913BE00822ECF /* CreditCard.swift */,
+				993EAF161C72B59100899916 /* CountryEnum.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +239,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
 			);
 			outputPaths = (
 			);
@@ -248,9 +259,11 @@
 				993EAEB31C672E8000899916 /* RegisterViewController.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
 				993EAEB81C68711500899916 /* TransitFareSetting.swift in Sources */,
+				993EAF171C72B59200899916 /* CountryEnum.swift in Sources */,
 				999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */,
 				993EAEA91C645A8800899916 /* MyProfileViewController.swift in Sources */,
 				999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */,
+				993EAF191C73524100899916 /* BusTimingViewController.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
 				993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */,

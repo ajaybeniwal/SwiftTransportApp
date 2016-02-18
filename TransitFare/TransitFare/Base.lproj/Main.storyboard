@@ -216,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHX-Qn-0TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="1143"/>
+            <point key="canvasLocation" x="1701" y="1923"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -317,7 +317,7 @@
         <!--BusTime-->
         <scene sceneID="Pyy-46-pVg">
             <objects>
-                <viewController id="Doz-vX-g4g" sceneMemberID="viewController">
+                <viewController id="Doz-vX-g4g" customClass="BusTimingViewController" customModule="TransitFare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gKZ-Uh-RU2"/>
                         <viewControllerLayoutGuide type="bottom" id="4Yr-Rk-FG9"/>
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knW-Qo-qNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="1835"/>
+            <point key="canvasLocation" x="1690" y="1069"/>
         </scene>
         <!--BusTime-->
         <scene sceneID="k7p-SV-ykW">

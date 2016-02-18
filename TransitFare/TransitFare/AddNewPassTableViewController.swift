@@ -48,6 +48,7 @@ class AddNewPassTableViewController: UITableViewController {
                 (response) -> Void in
                 if let value = response.result.value {
                     let json = JSON(value)
+                    print(json)
                     let data = json["data"]
                     for (_,subJson):(String, JSON) in data {
                         let _cardModel = CreditCardModel(customerCode:subJson["customerCode"].string!,
