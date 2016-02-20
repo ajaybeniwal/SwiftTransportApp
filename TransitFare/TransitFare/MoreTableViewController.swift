@@ -32,7 +32,6 @@ class MoreTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        print("clicked on index path")
     }
 
     // MARK: - Table view data source

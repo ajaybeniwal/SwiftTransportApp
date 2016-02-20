@@ -36,6 +36,8 @@
 		99EE0B3E1C77113F00CFFB1C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B3D1C77113F00CFFB1C /* Reachability.swift */; };
 		99EE0B401C77247300CFFB1C /* UIAlertAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B3F1C77247300CFFB1C /* UIAlertAPI.swift */; };
 		99EE0B441C78181800CFFB1C /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B431C78181800CFFB1C /* MoreTableViewController.swift */; };
+		99EE0B461C784B4300CFFB1C /* SavedCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B451C784B4300CFFB1C /* SavedCardsTableViewCell.swift */; };
+		99EE0B481C785AEF00CFFB1C /* SavedCardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		99EE0B3D1C77113F00CFFB1C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		99EE0B3F1C77247300CFFB1C /* UIAlertAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertAPI.swift; sourceTree = "<group>"; };
 		99EE0B431C78181800CFFB1C /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		99EE0B451C784B4300CFFB1C /* SavedCardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsTableViewCell.swift; sourceTree = "<group>"; };
+		99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				993EAEB91C68763500899916 /* TransitFareClientSetting.swift */,
 				993EAF181C73524100899916 /* BusTimingViewController.swift */,
 				99EE0B431C78181800CFFB1C /* MoreTableViewController.swift */,
+				99EE0B451C784B4300CFFB1C /* SavedCardsTableViewCell.swift */,
+				99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */,
 			);
 			path = TransitFare;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 				993EAEB31C672E8000899916 /* RegisterViewController.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
 				993EAEB81C68711500899916 /* TransitFareSetting.swift in Sources */,
+				99EE0B481C785AEF00CFFB1C /* SavedCardsTableViewController.swift in Sources */,
 				993EAF171C72B59200899916 /* CountryEnum.swift in Sources */,
 				99EE0B3E1C77113F00CFFB1C /* Reachability.swift in Sources */,
 				999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */,
@@ -281,6 +288,7 @@
 				99EE0B441C78181800CFFB1C /* MoreTableViewController.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
+				99EE0B461C784B4300CFFB1C /* SavedCardsTableViewCell.swift in Sources */,
 				993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */,
 				993EAEAC1C66555B00899916 /* LoginViewController.swift in Sources */,
 				999C63E51C59137800822ECF /* Product.swift in Sources */,

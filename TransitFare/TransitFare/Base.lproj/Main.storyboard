@@ -326,6 +326,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="R1L-rG-fnQ" kind="show" id="IWZ-sp-zoG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="RqD-L8-jZG">
                                         <rect key="frame" x="0.0" y="143" width="600" height="44"/>
@@ -346,6 +349,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="R1L-rG-fnQ" kind="show" id="Dd8-dc-sCp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -363,7 +369,61 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGt-JV-Hrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="1807"/>
+            <point key="canvasLocation" x="1938" y="1799"/>
+        </scene>
+        <!--Saved Cards-->
+        <scene sceneID="9Jy-a5-e2o">
+            <objects>
+                <tableViewController id="R1L-rG-fnQ" customClass="SavedCardsTableViewController" customModule="TransitFare" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="54" sectionHeaderHeight="18" sectionFooterHeight="18" id="fpa-ox-4L2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedCards" rowHeight="54" id="8Rz-gt-qLa" customClass="SavedCardsTableViewCell" customModule="TransitFare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="600" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Rz-gt-qLa" id="2vA-qy-Dul">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Amex" translatesAutoresizingMaskIntoConstraints="NO" id="HVR-d7-TsI">
+                                            <rect key="frame" x="19" y="8" width="63" height="37"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SB-Xo-mc3">
+                                            <rect key="frame" x="90" y="8" width="351" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cardImage" destination="HVR-d7-TsI" id="xpc-CT-yca"/>
+                                    <outlet property="cardNumberLabel" destination="5SB-Xo-mc3" id="zHE-QJ-ezs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="R1L-rG-fnQ" id="fxX-Z8-fVB"/>
+                            <outlet property="delegate" destination="R1L-rG-fnQ" id="fiN-f6-buy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Saved Cards" id="zTc-oI-qFD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zs1-DB-tST">
+                            <connections>
+                                <action selector="addNewCard:" destination="R1L-rG-fnQ" id="3B6-ed-cSp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButtonBarItem" destination="Zs1-DB-tST" id="WJN-dA-1l5"/>
+                        <segue destination="Svj-XZ-7N3" kind="presentation" identifier="addCardFromSavedCard" id="QAv-Mk-F6X"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7p-qh-ZMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3012" y="1213"/>
         </scene>
         <!--BusTime-->
         <scene sceneID="k7p-SV-ykW">
@@ -405,6 +465,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Amex" width="73" height="44"/>
         <image name="MasterCard" width="73" height="44"/>
         <image name="More" width="24" height="24"/>
         <image name="Wallet" width="24" height="24"/>
@@ -412,4 +473,8 @@
         <image name="addpass" width="24" height="24"/>
         <image name="bus" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IWZ-sp-zoG"/>
+        <segue reference="QAv-Mk-F6X"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -87,7 +87,7 @@ class AddNewPassTableViewController: UITableViewController {
     
     func getCardData() -> Void{
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        Alamofire.request(.GET, APIUtility.getEndPointURL("customer/billingInfo")).responseJSON(completionHandler:
+        Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
             {
                 (response) -> Void in
                 if let value = response.result.value {

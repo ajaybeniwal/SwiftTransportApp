@@ -10,7 +10,7 @@ import Foundation
 
 struct APIUtility {
     static func getEndPointURL(endPoint:String) -> String{
-        let apiEndPoint:String  = "https://portal.transitfare.com/api/1/mobile/" + endPoint
+        let apiEndPoint:String  = "http://private-f7d564-transitfareapi.apiary-mock.com/" + endPoint
         return apiEndPoint
         
     }
