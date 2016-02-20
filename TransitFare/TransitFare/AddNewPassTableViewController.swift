@@ -15,16 +15,16 @@ import Material
 
 class AddNewPassTableViewController: UITableViewController {
     var productCollection = [ProductModel]()
+    var reachability : Reachability?
     @IBOutlet var saveBarItem: UIBarButtonItem!
     @IBAction func saveNewPass(sender: AnyObject) {
         print("clicked on save button")
        
     }
-    
-   
     var cardCollection = [CreditCardModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
         getPassData()
@@ -34,10 +34,54 @@ class AddNewPassTableViewController: UITableViewController {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        configureNetworkStatus()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        reachability?.stopNotifier()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    func configureNetworkStatus(){
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        reachability!.whenReachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            dispatch_async(dispatch_get_main_queue()) {
+                if reachability.isReachableViaWiFi() {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+            }
+        }
+        reachability!.whenUnreachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+           
+            dispatch_async(dispatch_get_main_queue()){
+                self.showAlert("No Network", message: "You must be connected to internet to add pass")
+            }
+            
+        }
+        do {
+            try reachability!.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+    }
+    
     
      /*Fetch the credit card data using alamofire */
     
@@ -152,6 +196,10 @@ class AddNewPassTableViewController: UITableViewController {
               cell.cardNumberLeft.constant = 0
               cell.addNewCardButton.hidden = false
               cell.addCardLeft.constant = 15
+              cell.addNewCardButton.setImage(UIImage(named: "addcard"), forState:UIControlState.Normal)
+              cell.addNewCardButton.setTitleColor(UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 242.0/255.0, alpha: 1.0),forState: UIControlState.Normal)
+              cell.addNewCardButton.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
+        
             
         }
         return cell
@@ -200,6 +248,7 @@ class AddNewPassTableViewController: UITableViewController {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
+        header.textLabel?.font = UIFont.boldSystemFontOfSize(16)
         
     }
     
