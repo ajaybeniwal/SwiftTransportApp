@@ -38,6 +38,8 @@
 		99EE0B441C78181800CFFB1C /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B431C78181800CFFB1C /* MoreTableViewController.swift */; };
 		99EE0B461C784B4300CFFB1C /* SavedCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B451C784B4300CFFB1C /* SavedCardsTableViewCell.swift */; };
 		99EE0B481C785AEF00CFFB1C /* SavedCardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */; };
+		99EE0B4A1C78CB5F00CFFB1C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EE0B491C78CB5F00CFFB1C /* Parse.framework */; };
+		99EE0B4C1C794F6000CFFB1C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EE0B4B1C794F6000CFFB1C /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		99EE0B431C78181800CFFB1C /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		99EE0B451C784B4300CFFB1C /* SavedCardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsTableViewCell.swift; sourceTree = "<group>"; };
 		99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsTableViewController.swift; sourceTree = "<group>"; };
+		99EE0B491C78CB5F00CFFB1C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		99EE0B4B1C794F6000CFFB1C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
 				993EAEAE1C6655BE00899916 /* SnapKit.framework in Frameworks */,
 				999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */,
+				99EE0B4C1C794F6000CFFB1C /* Bolts.framework in Frameworks */,
+				99EE0B4A1C78CB5F00CFFB1C /* Parse.framework in Frameworks */,
 				999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +111,8 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				99EE0B4B1C794F6000CFFB1C /* Bolts.framework */,
+				99EE0B491C78CB5F00CFFB1C /* Parse.framework */,
 				99EE0B3A1C770EAA00CFFB1C /* Api */,
 				993EAF131C71E28D00899916 /* Eureka.framework */,
 				993EAEAF1C66597D00899916 /* Resources */,
@@ -260,6 +268,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
 			);
 			outputPaths = (
 			);

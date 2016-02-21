@@ -11,6 +11,7 @@ import SnapKit
 import MBProgressHUD
 import Material
 import Alamofire
+import Parse
 
 class LoginViewController: UIViewController {
    let kUserName = "me.fin.username"
@@ -139,22 +140,21 @@ class LoginViewController: UIViewController {
     
     func loginClick(sender:UIButton){
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        let parameters = [
-            "username": "ajaysingh98711@gmail.com",
-            "password": "honda@1234567",
-            "origin": "prp"
-        ]
-        Alamofire.request(.POST, "https://portal.transitfare.com/login", parameters: parameters, encoding: .JSON).responseJSON(completionHandler:{
-            (response) -> Void in
-            if let _ = response.result.value {
-                TransitFareSetting.sharedInstance[self.kUserName] = "ajaysingh98711@gmail.com"
-                progressHUD.hide(true)
+        PFUser.logInWithUsernameInBackground(self.userNameTextField!.text!, password: self.passwordTextField!.text!){
+            (user: PFUser?, error: NSError?) -> Void in
+            progressHUD.hide(true)
+            if user != nil {
+                print("success login")
+                // Do stuff after successful login.
+            } else {
+                self.showAlert("Error", message: "Wrong username or password")
+                // The login failed. Check error to see why.
             }
-            else{
-                progressHUD.hide(true)
-            }
-        })
+        }
+       
         
+      
+
     }
     func registerClick(sender:UIButton){
         print("clicked on register")

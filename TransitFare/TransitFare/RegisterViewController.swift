@@ -10,15 +10,13 @@ import UIKit
 import SnapKit
 import MBProgressHUD
 import Material
+import Parse
 
 class RegisterViewController: UIViewController {
     var backgroundImageView : UIImageView?
     var userNameTextField: UITextField?
-    var firstNameTextField:UITextField?
-    var lastNameTextField :UITextField?
     var phoneNumberTextField:UITextField?
     var passwordTextField:UITextField?
-    var verifyTextField:UITextField?
     var frostedView :UIView?
     var registerButton:RaisedButton?
     override func viewDidLoad() {
@@ -58,70 +56,11 @@ class RegisterViewController: UIViewController {
             make.height.equalTo(50)
         }
         
-        self.firstNameTextField = UITextField()
-        self.firstNameTextField!.textColor = UIColor.blackColor()
-        self.firstNameTextField!.backgroundColor = UIColor(white: 1, alpha: 0.6);
-        self.firstNameTextField!.layer.borderWidth = 0.5
-        self.firstNameTextField!.keyboardType = .ASCIICapable
-        self.firstNameTextField!.secureTextEntry = true
-        self.firstNameTextField!.layer.borderColor = UIColor(white: 1, alpha: 0.8).CGColor;
-        self.firstNameTextField!.placeholder = "First Name"
-        self.firstNameTextField!.clearButtonMode = .Always
-        
-        
-        
-        let accountIconImageView = UIImageView(image: UIImage(named: "account")!.imageWithRenderingMode(.AlwaysTemplate));
-        accountIconImageView.frame = CGRectMake(30, 10, 24, 24)
-        accountIconImageView.contentMode = .ScaleAspectFit
-        accountIconImageView.tintColor = MaterialColor.grey.base
-        
-        self.firstNameTextField!.leftView = accountIconImageView
-        self.firstNameTextField!.leftViewMode = .Always
-        frostedView!.addSubview(self.firstNameTextField!)
-        
-        self.firstNameTextField!.snp_makeConstraints{ (make) -> Void in
-            make.top.equalTo(self.userNameTextField!.snp_bottom).offset(0)
-            make.centerX.equalTo(self.frostedView!)
-            make.leading.equalTo(self.frostedView!)
-            
-            make.height.equalTo(50)
-        }
-        
-        self.lastNameTextField = UITextField()
-        self.lastNameTextField!.textColor = UIColor.blackColor()
-        self.lastNameTextField!.backgroundColor = UIColor(white: 1, alpha: 0.6);
-        self.lastNameTextField!.layer.borderWidth = 0.5
-        self.lastNameTextField!.keyboardType = .ASCIICapable
-        self.lastNameTextField!.secureTextEntry = true
-        self.lastNameTextField!.layer.borderColor = UIColor(white: 1, alpha: 0.8).CGColor;
-        self.lastNameTextField!.placeholder = "First Name"
-        self.lastNameTextField!.clearButtonMode = .Always
-        
-        
-        
-        let lastNameIconImageView = UIImageView(image: UIImage(named: "account")!.imageWithRenderingMode(.AlwaysTemplate));
-        lastNameIconImageView.frame = CGRectMake(30, 10, 24, 24)
-        lastNameIconImageView.contentMode = .ScaleAspectFit
-        lastNameIconImageView.tintColor = MaterialColor.grey.base
-        
-        self.lastNameTextField!.leftView = lastNameIconImageView
-        self.lastNameTextField!.leftViewMode = .Always
-        frostedView!.addSubview(self.lastNameTextField!)
-        
-        self.lastNameTextField!.snp_makeConstraints{ (make) -> Void in
-            make.top.equalTo(self.firstNameTextField!.snp_bottom).offset(0)
-            make.centerX.equalTo(self.frostedView!)
-            make.leading.equalTo(self.frostedView!)
-            
-            make.height.equalTo(50)
-        }
-        
         self.phoneNumberTextField = UITextField()
         self.phoneNumberTextField!.textColor = UIColor.blackColor()
         self.phoneNumberTextField!.backgroundColor = UIColor(white: 1, alpha: 0.6);
         self.phoneNumberTextField!.layer.borderWidth = 0.5
         self.phoneNumberTextField!.keyboardType = .ASCIICapable
-        self.phoneNumberTextField!.secureTextEntry = true
         self.phoneNumberTextField!.layer.borderColor = UIColor(white: 1, alpha: 0.8).CGColor;
         self.phoneNumberTextField!.placeholder = "Phone Number"
         self.phoneNumberTextField!.clearButtonMode = .Always
@@ -136,12 +75,41 @@ class RegisterViewController: UIViewController {
         self.phoneNumberTextField!.leftViewMode = .Always
         frostedView!.addSubview(self.phoneNumberTextField!)
         self.phoneNumberTextField!.snp_makeConstraints{ (make) -> Void in
-            make.top.equalTo(self.lastNameTextField!.snp_bottom).offset(0)
+            make.top.equalTo(self.userNameTextField!.snp_bottom).offset(0)
             make.centerX.equalTo(self.frostedView!)
             make.leading.equalTo(self.frostedView!)
             
             make.height.equalTo(50)
         }
+        
+        
+        self.passwordTextField = UITextField()
+        self.passwordTextField!.textColor = UIColor.blackColor()
+        self.passwordTextField!.backgroundColor = UIColor(white: 1, alpha: 0.6);
+        self.passwordTextField!.layer.borderWidth = 0.5
+        self.passwordTextField!.keyboardType = .ASCIICapable
+        self.passwordTextField!.secureTextEntry = true
+        self.passwordTextField!.layer.borderColor = UIColor(white: 1, alpha: 0.8).CGColor;
+        self.passwordTextField!.placeholder = "Password"
+        self.passwordTextField!.clearButtonMode = .Always
+        
+        
+        let passwordIconImage = UIImageView(image: UIImage(named: "password")!.imageWithRenderingMode(.AlwaysTemplate));
+        passwordIconImage.frame = CGRectMake(30, 10, 24, 24)
+        passwordIconImage.contentMode = .ScaleAspectFit
+        passwordIconImage.tintColor = MaterialColor.grey.base
+        
+        self.passwordTextField!.leftView = passwordIconImage
+        self.passwordTextField!.leftViewMode = .Always
+        frostedView!.addSubview(self.passwordTextField!)
+        self.passwordTextField!.snp_makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.phoneNumberTextField!.snp_bottom).offset(0)
+            make.centerX.equalTo(self.frostedView!)
+            make.leading.equalTo(self.frostedView!)
+            
+            make.height.equalTo(50)
+        }
+
         
         
         self.registerButton = RaisedButton()
@@ -151,7 +119,7 @@ class RegisterViewController: UIViewController {
         frostedView!.addSubview(self.registerButton!)
         self.registerButton?.addTarget(self, action: Selector("registerClick:"), forControlEvents: .TouchUpInside)
         self.registerButton!.snp_makeConstraints{ (make) -> Void in
-            make.top.equalTo(self.phoneNumberTextField!.snp_bottom).offset(20)
+            make.top.equalTo(self.passwordTextField!.snp_bottom).offset(20)
             make.centerX.equalTo(self.frostedView!)
             make.width.equalTo(250)
             make.height.equalTo(50)
@@ -163,8 +131,27 @@ class RegisterViewController: UIViewController {
     }
     
     func registerClick(sender:UIButton){
-        dismissViewControllerAnimated(true, completion:nil)
-        print("Clicked on register button")
+        //dismissViewControllerAnimated(true, completion:nil)
+        let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
+        let user = PFUser()
+        user.username = userNameTextField?.text
+        user.password = passwordTextField?.text
+        user.email = userNameTextField?.text
+        user["phone"] = phoneNumberTextField?.text
+        
+        user.signUpInBackgroundWithBlock {
+            (success,error) -> Void in
+            progressHUD.hide(true)
+            if let _ = error{
+               self.showAlert("Error", message: "Error while creating user")
+            }
+            else{
+                self.showAlert("Success", message: "User created sucessfully")
+            }
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

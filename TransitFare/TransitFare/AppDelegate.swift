@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,19 +34,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            self.window?.rootViewController = LoginViewController() 
         }
         
+        let parseConfiguration = ParseClientConfiguration {
+            $0.applicationId = "myAppId"
+            $0.clientKey = "myAppId"
+            $0.server = "https://swifttransportapp.herokuapp.com/parse"
+        }
         
-        
+        Parse.initializeWithConfiguration(parseConfiguration)
         
         return true
     }
     
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        var deviceToken: String = deviceToken.description
-        deviceToken = deviceToken.stringByReplacingOccurrencesOfString(" ", withString: "").stringByReplacingOccurrencesOfString("<", withString: "").stringByReplacingOccurrencesOfString(">", withString: "");
-        self.deviceToken = deviceToken
+        var deviceTokenChanged: String = deviceToken.description
+        deviceTokenChanged = deviceTokenChanged.stringByReplacingOccurrencesOfString(" ", withString: "").stringByReplacingOccurrencesOfString("<", withString: "").stringByReplacingOccurrencesOfString(">", withString: "");
+        self.deviceToken = deviceTokenChanged
         NSLog("Push Plugin register success: %@", self.deviceToken!);
-        
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

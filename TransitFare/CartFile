@@ -5,3 +5,4 @@ github "jdg/MBProgressHUD" ~> 0.9.2
 github "CosmicMind/Material"
 github "SnapKit/SnapKit" >= 0.15.0
 github "xmartlabs/Eureka" ~> 1.0
+github "ParsePlatform/Parse-SDK-iOS-OSX"
