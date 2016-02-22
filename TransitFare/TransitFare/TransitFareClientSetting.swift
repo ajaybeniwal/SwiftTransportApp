@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Parse
 
 let kUserName = "me.fin.username"
 
@@ -30,19 +31,15 @@ class TransitFareClient: NSObject {
     func setup(){
         self.username = TransitFareSetting.sharedInstance[kUserName]
     }
-    var isLogin:Bool {
-        get {
-            if self.username?.characters.count > 0 {
-                return true
-            }
-            else {
-                return false
-            }
-        }
-    }
+    
+    
     
     func loginOut() {
         removeAllCookies()
+    }
+    
+    func logout(){
+        PFUser.logOut()
     }
     
     /**

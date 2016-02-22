@@ -30,9 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /* Setting the login controller as root view controler */
         
-        if(!TransitFareClient.sharedInstance.isLogin){
-           self.window?.rootViewController = LoginViewController() 
+        let currentUser = PFUser.currentUser()
+        if currentUser == nil {
+             self.window?.rootViewController = LoginViewController()
         }
+        
+        
+        
         
         let parseConfiguration = ParseClientConfiguration {
             $0.applicationId = "myAppId"
