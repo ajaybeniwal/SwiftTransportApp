@@ -29,23 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
         /* Setting the login controller as root view controler */
-        
-        let currentUser = PFUser.currentUser()
-        if currentUser == nil {
-             self.window?.rootViewController = LoginViewController()
-        }
-        
-        
-        
-        
         let parseConfiguration = ParseClientConfiguration {
             $0.applicationId = "myAppId"
             $0.clientKey = "myAppId"
             $0.server = "https://swifttransportapp.herokuapp.com/parse"
         }
-        
         Parse.initializeWithConfiguration(parseConfiguration)
-        
+        let currentUser = PFUser.currentUser()
+        if currentUser == nil {
+            self.window?.rootViewController = LoginViewController()
+        }
         return true
     }
     

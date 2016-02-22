@@ -15,4 +15,25 @@ extension UIViewController : ShowsAlert{
         alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    func showAlertWithAction(title:String="Error" , message:String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title:"Cancel",style: .Cancel){
+            (action) in
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        
+        let OkAction = UIAlertAction(title: "OK", style: .Default){
+            (action) in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alertController.addAction(OkAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+        
+    }
 }

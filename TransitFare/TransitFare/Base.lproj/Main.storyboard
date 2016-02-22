@@ -353,6 +353,27 @@
                                             <segue destination="R1L-rG-fnQ" kind="show" id="Dd8-dc-sCp"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PFZ-Aw-5IW">
+                                        <rect key="frame" x="0.0" y="187" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFZ-Aw-5IW" id="iEF-xD-sgY">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meb-9I-cMK">
+                                                    <rect key="frame" x="270" y="7" width="60" height="30"/>
+                                                    <state key="normal" title="Sign Out"/>
+                                                    <connections>
+                                                        <action selector="signOutClick:" destination="nKt-De-AbY" eventType="touchUpInside" id="3eN-H5-G6h"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="meb-9I-cMK" firstAttribute="centerX" secondItem="iEF-xD-sgY" secondAttribute="centerX" id="0pH-M2-XTN"/>
+                                                <constraint firstItem="meb-9I-cMK" firstAttribute="centerY" secondItem="iEF-xD-sgY" secondAttribute="centerY" id="yQf-O9-iDe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>

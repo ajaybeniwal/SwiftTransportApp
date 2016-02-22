@@ -8,10 +8,12 @@
 
 import UIKit
 import Material
+import Parse
 
 class MoreTableViewController: UITableViewController {
     @IBOutlet var profileImageView: UIImageView!
 
+    
     @IBOutlet var paymentImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,10 @@ class MoreTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    @IBAction func signOutClick(sender: AnyObject) {
+        PFUser.logOut()
     }
 
     // MARK: - Table view data source

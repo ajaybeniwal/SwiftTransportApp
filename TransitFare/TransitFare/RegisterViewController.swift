@@ -19,6 +19,7 @@ class RegisterViewController: UIViewController {
     var passwordTextField:UITextField?
     var frostedView :UIView?
     var registerButton:RaisedButton?
+    var isAlreadyLoggedinButton : UIButton?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor()
@@ -125,9 +126,25 @@ class RegisterViewController: UIViewController {
             make.height.equalTo(50)
         }
         
+        self.isAlreadyLoggedinButton = UIButton()
+        self.isAlreadyLoggedinButton?.setTitle("Is already logged in?", forState: .Normal)
+        self.isAlreadyLoggedinButton?.addTarget(self, action: Selector("alreadyLoggedIn:"), forControlEvents: .TouchUpInside)
+        self.isAlreadyLoggedinButton?.titleLabel?.textColor = UIColor.whiteColor()
+        frostedView!.addSubview(self.isAlreadyLoggedinButton!)
+        self.isAlreadyLoggedinButton!.snp_makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.registerButton!.snp_bottom).offset(20)
+            make.centerX.equalTo(self.frostedView!)
+            make.width.equalTo(250)
+            make.height.equalTo(50)
+        }
+        
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    func alreadyLoggedIn(sender:UIButton){
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func registerClick(sender:UIButton){
@@ -147,7 +164,7 @@ class RegisterViewController: UIViewController {
                self.showAlert("Error", message: "Error while creating user")
             }
             else{
-                self.showAlert("Success", message: "User created sucessfully")
+                self.showAlertWithAction("Success", message: "User created sucessfully")
             }
         }
         

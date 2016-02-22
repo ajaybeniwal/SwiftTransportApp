@@ -144,11 +144,16 @@ class LoginViewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             progressHUD.hide(true)
             if user != nil {
-                print("success login")
-                // Do stuff after successful login.
+             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+             appDelegate.window?.rootViewController = HomeViewController()
+             
+            
+                
+                
+                
             } else {
                 self.showAlert("Error", message: "Wrong username or password")
-                // The login failed. Check error to see why.
+               
             }
         }
        
@@ -157,7 +162,6 @@ class LoginViewController: UIViewController {
 
     }
     func registerClick(sender:UIButton){
-        print("clicked on register")
         self.presentViewController(RegisterViewController(), animated: true, completion: nil)
     }
     
