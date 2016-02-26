@@ -76,6 +76,10 @@
 		99F3F7771C7F0C40002EFFFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998BB92F1C4C871D00136EDD /* Assets.xcassets */; };
 		99F3F7781C7F0C40002EFFFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998BB92C1C4C871D00136EDD /* Main.storyboard */; };
 		99F3F7801C7FE619002EFFFD /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F3F77F1C7FE619002EFFFD /* PassKit.framework */; };
+		99F3F7851C8019FF002EFFFD /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7841C8019FF002EFFFD /* QRCode.swift */; };
+		99F3F7861C8019FF002EFFFD /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7841C8019FF002EFFFD /* QRCode.swift */; };
+		99F3F7881C801B27002EFFFD /* PKPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7871C801B27002EFFFD /* PKPass.swift */; };
+		99F3F7891C801B27002EFFFD /* PKPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7871C801B27002EFFFD /* PKPass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +123,8 @@
 		99F3F77E1C7F0C40002EFFFD /* TransitFare copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TransitFare copy-Info.plist"; path = "/Users/ajaybeniwal203/ODeskWork/SwiftTransportApp/TransitFare/TransitFare copy-Info.plist"; sourceTree = "<absolute>"; };
 		99F3F77F1C7FE619002EFFFD /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		99F3F7811C7FE619002EFFFD /* TransitFare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TransitFare.entitlements; sourceTree = "<group>"; };
+		99F3F7841C8019FF002EFFFD /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		99F3F7871C801B27002EFFFD /* PKPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKPass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				99F3F7831C801849002EFFFD /* Protocol */,
 				99F3F77F1C7FE619002EFFFD /* PassKit.framework */,
 				99EE0B571C7DB2F000CFFB1C /* Extensions */,
 				99EE0B4B1C794F6000CFFB1C /* Bolts.framework */,
@@ -247,6 +254,7 @@
 		99EE0B571C7DB2F000CFFB1C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				99F3F7821C801833002EFFFD /* PKPass */,
 				99EE0B581C7DB2FB00CFFB1C /* UIViewController */,
 			);
 			name = Extensions;
@@ -258,6 +266,22 @@
 				99EE0B591C7DB32200CFFB1C /* TopMostViewController.swift */,
 			);
 			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		99F3F7821C801833002EFFFD /* PKPass */ = {
+			isa = PBXGroup;
+			children = (
+				99F3F7871C801B27002EFFFD /* PKPass.swift */,
+			);
+			name = PKPass;
+			sourceTree = "<group>";
+		};
+		99F3F7831C801849002EFFFD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				99F3F7841C8019FF002EFFFD /* QRCode.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +452,8 @@
 				99EE0B481C785AEF00CFFB1C /* SavedCardsTableViewController.swift in Sources */,
 				993EAF171C72B59200899916 /* CountryEnum.swift in Sources */,
 				99EE0B3E1C77113F00CFFB1C /* Reachability.swift in Sources */,
+				99F3F7851C8019FF002EFFFD /* QRCode.swift in Sources */,
+				99F3F7881C801B27002EFFFD /* PKPass.swift in Sources */,
 				999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */,
 				999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */,
 				993EAF191C73524100899916 /* BusTimingViewController.swift in Sources */,
@@ -456,6 +482,8 @@
 				99F3F75B1C7F0C40002EFFFD /* SavedCardsTableViewController.swift in Sources */,
 				99F3F75C1C7F0C40002EFFFD /* CountryEnum.swift in Sources */,
 				99F3F75D1C7F0C40002EFFFD /* Reachability.swift in Sources */,
+				99F3F7861C8019FF002EFFFD /* QRCode.swift in Sources */,
+				99F3F7891C801B27002EFFFD /* PKPass.swift in Sources */,
 				99F3F75E1C7F0C40002EFFFD /* CreditCard.swift in Sources */,
 				99F3F75F1C7F0C40002EFFFD /* APIUtility.swift in Sources */,
 				99F3F7601C7F0C40002EFFFD /* BusTimingViewController.swift in Sources */,

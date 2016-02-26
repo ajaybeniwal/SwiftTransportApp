@@ -28,6 +28,8 @@ class FirstViewController: UIViewController {
         
     }
     
+  
+    
     func prepareAddtoWalletButton(){
         addPassButton = PKAddPassButton()
         self.view.addSubview(addPassButton)
