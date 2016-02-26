@@ -36,4 +36,23 @@ extension UIViewController : ShowsAlert{
         presentViewController(alertController, animated: true, completion: nil)
         
     }
+    
+    func showAlertWithActionCallback(title:String="Error" , message:String,callback:(UIAlertAction) -> Void){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title:"Cancel",style: .Cancel){
+            (action) in
+            
+        }
+        
+        
+        
+        alertController.addAction(cancelAction)
+        
+        let OkAction = UIAlertAction(title: "Ok", style: .Default, handler: callback)
+        alertController.addAction(OkAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+        
+    }
 }

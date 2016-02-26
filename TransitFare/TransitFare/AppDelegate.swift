@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var deviceToken :String?
+    var tabViewController :UITabBarController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -35,6 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://swifttransportapp.herokuapp.com/parse"
         }
         Parse.initializeWithConfiguration(parseConfiguration)
+        print(self.window?.rootViewController)
+        self.tabViewController = self.window?.rootViewController as? UITabBarController
+        print(self.tabViewController)
+        
+        
         let currentUser = PFUser.currentUser()
         if currentUser == nil {
             self.window?.rootViewController = LoginViewController()

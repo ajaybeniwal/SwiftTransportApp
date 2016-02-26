@@ -37,7 +37,15 @@ class MoreTableViewController: UITableViewController {
     }
     
     @IBAction func signOutClick(sender: AnyObject) {
-        PFUser.logOut()
+        showAlertWithActionCallback("Logout", message: "Are u sure you want to logout"){
+            (action) in
+            PFUser.logOut()
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController = LoginViewController()
+            self.navigationController?.popToRootViewControllerAnimated(true)
+            
+        }
+       // PFUser.logOut()
     }
 
     // MARK: - Table view data source

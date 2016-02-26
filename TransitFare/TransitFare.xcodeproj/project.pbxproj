@@ -40,6 +40,42 @@
 		99EE0B481C785AEF00CFFB1C /* SavedCardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */; };
 		99EE0B4A1C78CB5F00CFFB1C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EE0B491C78CB5F00CFFB1C /* Parse.framework */; };
 		99EE0B4C1C794F6000CFFB1C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EE0B4B1C794F6000CFFB1C /* Bolts.framework */; };
+		99EE0B5A1C7DB32200CFFB1C /* TopMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B591C7DB32200CFFB1C /* TopMostViewController.swift */; };
+		99F3F7551C7F0C40002EFFFD /* AddNewPassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63DD1C58653000822ECF /* AddNewPassTableViewCell.swift */; };
+		99F3F7561C7F0C40002EFFFD /* TopMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B591C7DB32200CFFB1C /* TopMostViewController.swift */; };
+		99F3F7571C7F0C40002EFFFD /* TransitFareClientSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEB91C68763500899916 /* TransitFareClientSetting.swift */; };
+		99F3F7581C7F0C40002EFFFD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEB21C672E8000899916 /* RegisterViewController.swift */; };
+		99F3F7591C7F0C40002EFFFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9261C4C871D00136EDD /* AppDelegate.swift */; };
+		99F3F75A1C7F0C40002EFFFD /* TransitFareSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEB71C68711500899916 /* TransitFareSetting.swift */; };
+		99F3F75B1C7F0C40002EFFFD /* SavedCardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */; };
+		99F3F75C1C7F0C40002EFFFD /* CountryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAF161C72B59100899916 /* CountryEnum.swift */; };
+		99F3F75D1C7F0C40002EFFFD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B3D1C77113F00CFFB1C /* Reachability.swift */; };
+		99F3F75E1C7F0C40002EFFFD /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63E61C5913BE00822ECF /* CreditCard.swift */; };
+		99F3F75F1C7F0C40002EFFFD /* APIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63DB1C57B22300822ECF /* APIUtility.swift */; };
+		99F3F7601C7F0C40002EFFFD /* BusTimingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAF181C73524100899916 /* BusTimingViewController.swift */; };
+		99F3F7611C7F0C40002EFFFD /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B431C78181800CFFB1C /* MoreTableViewController.swift */; };
+		99F3F7621C7F0C40002EFFFD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998BB9281C4C871D00136EDD /* FirstViewController.swift */; };
+		99F3F7631C7F0C40002EFFFD /* AddNewPassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63D91C577E8E00822ECF /* AddNewPassTableViewController.swift */; };
+		99F3F7641C7F0C40002EFFFD /* SavedCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B451C784B4300CFFB1C /* SavedCardsTableViewCell.swift */; };
+		99F3F7651C7F0C40002EFFFD /* AddNewCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */; };
+		99F3F7661C7F0C40002EFFFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEAB1C66555B00899916 /* LoginViewController.swift */; };
+		99F3F7671C7F0C40002EFFFD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C63E41C59137800822ECF /* Product.swift */; };
+		99F3F7681C7F0C40002EFFFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEB51C68693D00899916 /* HomeViewController.swift */; };
+		99F3F7691C7F0C40002EFFFD /* UIAlertAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EE0B3F1C77247300CFFB1C /* UIAlertAPI.swift */; };
+		99F3F76B1C7F0C40002EFFFD /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEA41C620B2200899916 /* Material.framework */; };
+		99F3F76C1C7F0C40002EFFFD /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAF131C71E28D00899916 /* Eureka.framework */; };
+		99F3F76D1C7F0C40002EFFFD /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63E81C59D05A00822ECF /* MBProgressHUD.framework */; };
+		99F3F76E1C7F0C40002EFFFD /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B71C41C55D77600FC5782 /* Kingfisher.framework */; };
+		99F3F76F1C7F0C40002EFFFD /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEAD1C6655BE00899916 /* SnapKit.framework */; };
+		99F3F7701C7F0C40002EFFFD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63DF1C58CC6200822ECF /* Alamofire.framework */; };
+		99F3F7711C7F0C40002EFFFD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EE0B4B1C794F6000CFFB1C /* Bolts.framework */; };
+		99F3F7721C7F0C40002EFFFD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EE0B491C78CB5F00CFFB1C /* Parse.framework */; };
+		99F3F7731C7F0C40002EFFFD /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C63E11C58D0E900822ECF /* SwiftyJSON.framework */; };
+		99F3F7751C7F0C40002EFFFD /* background-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 993EAEB01C66599400899916 /* background-logo.jpg */; };
+		99F3F7761C7F0C40002EFFFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998BB9311C4C871D00136EDD /* LaunchScreen.storyboard */; };
+		99F3F7771C7F0C40002EFFFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998BB92F1C4C871D00136EDD /* Assets.xcassets */; };
+		99F3F7781C7F0C40002EFFFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998BB92C1C4C871D00136EDD /* Main.storyboard */; };
+		99F3F7801C7FE619002EFFFD /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F3F77F1C7FE619002EFFFD /* PassKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +114,11 @@
 		99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardsTableViewController.swift; sourceTree = "<group>"; };
 		99EE0B491C78CB5F00CFFB1C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		99EE0B4B1C794F6000CFFB1C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		99EE0B591C7DB32200CFFB1C /* TopMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMostViewController.swift; sourceTree = "<group>"; };
+		99F3F77D1C7F0C40002EFFFD /* TransitFare Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TransitFare Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F3F77E1C7F0C40002EFFFD /* TransitFare copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TransitFare copy-Info.plist"; path = "/Users/ajaybeniwal203/ODeskWork/SwiftTransportApp/TransitFare/TransitFare copy-Info.plist"; sourceTree = "<absolute>"; };
+		99F3F77F1C7FE619002EFFFD /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		99F3F7811C7FE619002EFFFD /* TransitFare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TransitFare.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +132,26 @@
 				994B71C51C55D77600FC5782 /* Kingfisher.framework in Frameworks */,
 				993EAEAE1C6655BE00899916 /* SnapKit.framework in Frameworks */,
 				999C63E01C58CC6200822ECF /* Alamofire.framework in Frameworks */,
+				99F3F7801C7FE619002EFFFD /* PassKit.framework in Frameworks */,
 				99EE0B4C1C794F6000CFFB1C /* Bolts.framework in Frameworks */,
 				99EE0B4A1C78CB5F00CFFB1C /* Parse.framework in Frameworks */,
 				999C63E21C58D0E900822ECF /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F3F76A1C7F0C40002EFFFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F3F76B1C7F0C40002EFFFD /* Material.framework in Frameworks */,
+				99F3F76C1C7F0C40002EFFFD /* Eureka.framework in Frameworks */,
+				99F3F76D1C7F0C40002EFFFD /* MBProgressHUD.framework in Frameworks */,
+				99F3F76E1C7F0C40002EFFFD /* Kingfisher.framework in Frameworks */,
+				99F3F76F1C7F0C40002EFFFD /* SnapKit.framework in Frameworks */,
+				99F3F7701C7F0C40002EFFFD /* Alamofire.framework in Frameworks */,
+				99F3F7711C7F0C40002EFFFD /* Bolts.framework in Frameworks */,
+				99F3F7721C7F0C40002EFFFD /* Parse.framework in Frameworks */,
+				99F3F7731C7F0C40002EFFFD /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +169,8 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				99F3F77F1C7FE619002EFFFD /* PassKit.framework */,
+				99EE0B571C7DB2F000CFFB1C /* Extensions */,
 				99EE0B4B1C794F6000CFFB1C /* Bolts.framework */,
 				99EE0B491C78CB5F00CFFB1C /* Parse.framework */,
 				99EE0B3A1C770EAA00CFFB1C /* Api */,
@@ -125,6 +185,7 @@
 				998BB9251C4C871D00136EDD /* TransitFare */,
 				998BB9241C4C871D00136EDD /* Products */,
 				999C63DF1C58CC6200822ECF /* Alamofire.framework */,
+				99F3F77E1C7F0C40002EFFFD /* TransitFare copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				998BB9231C4C871D00136EDD /* TransitFare.app */,
+				99F3F77D1C7F0C40002EFFFD /* TransitFare Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +201,7 @@
 		998BB9251C4C871D00136EDD /* TransitFare */ = {
 			isa = PBXGroup;
 			children = (
+				99F3F7811C7FE619002EFFFD /* TransitFare.entitlements */,
 				998BB9261C4C871D00136EDD /* AppDelegate.swift */,
 				998BB9281C4C871D00136EDD /* FirstViewController.swift */,
 				998BB92C1C4C871D00136EDD /* Main.storyboard */,
@@ -181,6 +244,22 @@
 			name = Api;
 			sourceTree = "<group>";
 		};
+		99EE0B571C7DB2F000CFFB1C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99EE0B581C7DB2FB00CFFB1C /* UIViewController */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		99EE0B581C7DB2FB00CFFB1C /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				99EE0B591C7DB32200CFFB1C /* TopMostViewController.swift */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +281,24 @@
 			productReference = 998BB9231C4C871D00136EDD /* TransitFare.app */;
 			productType = "com.apple.product-type.application";
 		};
+		99F3F7531C7F0C40002EFFFD /* TransitFare Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99F3F77A1C7F0C40002EFFFD /* Build configuration list for PBXNativeTarget "TransitFare Dev" */;
+			buildPhases = (
+				99F3F7541C7F0C40002EFFFD /* Sources */,
+				99F3F76A1C7F0C40002EFFFD /* Frameworks */,
+				99F3F7741C7F0C40002EFFFD /* Resources */,
+				99F3F7791C7F0C40002EFFFD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TransitFare Dev";
+			productName = TransitFare;
+			productReference = 99F3F77D1C7F0C40002EFFFD /* TransitFare Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,8 +311,12 @@
 				TargetAttributes = {
 					998BB9221C4C871D00136EDD = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = U72SPX5AGJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Wallet = {
 								enabled = 1;
 							};
 						};
@@ -236,6 +337,7 @@
 			projectRoot = "";
 			targets = (
 				998BB9221C4C871D00136EDD /* TransitFare */,
+				99F3F7531C7F0C40002EFFFD /* TransitFare Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -252,10 +354,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99F3F7741C7F0C40002EFFFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F3F7751C7F0C40002EFFFD /* background-logo.jpg in Resources */,
+				99F3F7761C7F0C40002EFFFD /* LaunchScreen.storyboard in Resources */,
+				99F3F7771C7F0C40002EFFFD /* Assets.xcassets in Resources */,
+				99F3F7781C7F0C40002EFFFD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		994B71C71C55DBAA00FC5782 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		99F3F7791C7F0C40002EFFFD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */,
+				99EE0B5A1C7DB32200CFFB1C /* TopMostViewController.swift in Sources */,
 				993EAEBA1C68763500899916 /* TransitFareClientSetting.swift in Sources */,
 				993EAEB31C672E8000899916 /* RegisterViewController.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
@@ -304,6 +440,34 @@
 				999C63E51C59137800822ECF /* Product.swift in Sources */,
 				993EAEB61C68693D00899916 /* HomeViewController.swift in Sources */,
 				99EE0B401C77247300CFFB1C /* UIAlertAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F3F7541C7F0C40002EFFFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F3F7551C7F0C40002EFFFD /* AddNewPassTableViewCell.swift in Sources */,
+				99F3F7561C7F0C40002EFFFD /* TopMostViewController.swift in Sources */,
+				99F3F7571C7F0C40002EFFFD /* TransitFareClientSetting.swift in Sources */,
+				99F3F7581C7F0C40002EFFFD /* RegisterViewController.swift in Sources */,
+				99F3F7591C7F0C40002EFFFD /* AppDelegate.swift in Sources */,
+				99F3F75A1C7F0C40002EFFFD /* TransitFareSetting.swift in Sources */,
+				99F3F75B1C7F0C40002EFFFD /* SavedCardsTableViewController.swift in Sources */,
+				99F3F75C1C7F0C40002EFFFD /* CountryEnum.swift in Sources */,
+				99F3F75D1C7F0C40002EFFFD /* Reachability.swift in Sources */,
+				99F3F75E1C7F0C40002EFFFD /* CreditCard.swift in Sources */,
+				99F3F75F1C7F0C40002EFFFD /* APIUtility.swift in Sources */,
+				99F3F7601C7F0C40002EFFFD /* BusTimingViewController.swift in Sources */,
+				99F3F7611C7F0C40002EFFFD /* MoreTableViewController.swift in Sources */,
+				99F3F7621C7F0C40002EFFFD /* FirstViewController.swift in Sources */,
+				99F3F7631C7F0C40002EFFFD /* AddNewPassTableViewController.swift in Sources */,
+				99F3F7641C7F0C40002EFFFD /* SavedCardsTableViewCell.swift in Sources */,
+				99F3F7651C7F0C40002EFFFD /* AddNewCreditCardViewController.swift in Sources */,
+				99F3F7661C7F0C40002EFFFD /* LoginViewController.swift in Sources */,
+				99F3F7671C7F0C40002EFFFD /* Product.swift in Sources */,
+				99F3F7681C7F0C40002EFFFD /* HomeViewController.swift in Sources */,
+				99F3F7691C7F0C40002EFFFD /* UIAlertAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,15 +578,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TransitFare/TransitFare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TransitFare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.commonapp.projectpocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -430,14 +598,50 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TransitFare/TransitFare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = TransitFare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.commonapp.projectpocket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		99F3F77B1C7F0C40002EFFFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "TransitFare copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.commonapp.projectpocket-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		99F3F77C1C7F0C40002EFFFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "TransitFare copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.commonapp.projectpocket-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -459,6 +663,15 @@
 			buildConfigurations = (
 				998BB9381C4C871D00136EDD /* Debug */,
 				998BB9391C4C871D00136EDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99F3F77A1C7F0C40002EFFFD /* Build configuration list for PBXNativeTarget "TransitFare Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F3F77B1C7F0C40002EFFFD /* Debug */,
+				99F3F77C1C7F0C40002EFFFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

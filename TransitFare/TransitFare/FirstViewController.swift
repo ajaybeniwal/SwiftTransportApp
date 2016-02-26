@@ -10,16 +10,39 @@ import UIKit
 import Kingfisher
 import QuartzCore
 import Material
+import PassKit
+import SnapKit
 
+@available(iOS 9.0, *)
 class FirstViewController: UIViewController {
     @IBOutlet var addNewButton: FabButton!
-    
     @IBOutlet var cardContainer: UIView!
     @IBOutlet var passCacheImageView: UIImageView!
+    var addPassButton:PKAddPassButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         passCacheImageView.kf_setImageWithURL(NSURL(string: "https://chart.googleapis.com/chart?cht=qr&chl=9871116244&choe=UTF-8&chs=280x280")!)
         prepareFabButton()
+        prepareAddtoWalletButton()
+        self.addNewButton!.hidden = true
+        
+    }
+    
+    func prepareAddtoWalletButton(){
+        addPassButton = PKAddPassButton()
+        self.view.addSubview(addPassButton)
+        
+        self.addPassButton!.snp_makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(self.cardContainer!.snp_bottom).offset(30)
+            make.leading.equalTo(self.view).offset(24)
+            make.trailing.equalTo(self.view).offset(-24)
+            
+        }
+        self.addPassButton?.addTarget(self, action: Selector("addToWalletClick:"), forControlEvents: .TouchUpInside)
+        
+        
+        
     }
     func prepareFabButton() {
         addNewButton.backgroundColor = MaterialColor.pink.base
@@ -28,6 +51,13 @@ class FirstViewController: UIViewController {
         addNewButton.setImage(img, forState: .Highlighted)
         addNewButton.tintColor = UIColor.whiteColor()
     }
+    
+    
+    func addToWalletClick(sender:UIButton){
+        print("about to add pass to the wallet")
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

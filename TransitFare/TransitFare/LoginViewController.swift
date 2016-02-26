@@ -133,6 +133,10 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        self.view.endEditing(true);
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -145,7 +149,7 @@ class LoginViewController: UIViewController {
             progressHUD.hide(true)
             if user != nil {
              let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-             appDelegate.window?.rootViewController = HomeViewController()
+             appDelegate.window?.rootViewController = appDelegate.tabViewController
              
             
                 
