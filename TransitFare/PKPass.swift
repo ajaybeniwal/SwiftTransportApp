@@ -10,8 +10,9 @@ import Foundation
 import PassKit
 
 
-extension PKPass :QrCodePass{
-    func getQRCodePass() {
-        
+extension PKPass{
+    func isPassAlreadyAdded() ->Bool{
+        let passKitLibrary = PKPassLibrary();
+        return passKitLibrary.containsPass(self)
     }
 }

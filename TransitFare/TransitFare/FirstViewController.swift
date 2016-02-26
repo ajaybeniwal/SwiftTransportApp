@@ -14,7 +14,7 @@ import PassKit
 import SnapKit
 
 @available(iOS 9.0, *)
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     @IBOutlet var addNewButton: FabButton!
     @IBOutlet var cardContainer: UIView!
     @IBOutlet var passCacheImageView: UIImageView!
@@ -56,7 +56,20 @@ class FirstViewController: UIViewController {
     
     
     func addToWalletClick(sender:UIButton){
-        print("about to add pass to the wallet")
+        let filePath = NSBundle.mainBundle().pathForResource("Transport", ofType: "pkpass")
+        let data = NSData(contentsOfFile: filePath!)
+        let pkPass = PKPass(data: data!, error: nil)
+        if(pkPass.isPassAlreadyAdded()){
+            self.showAlert("Failure", message:"The pass is already added to library")
+        }
+        else{
+            let pkPassViewController = PKAddPassesViewController(pass: pkPass)
+            pkPassViewController.delegate = self;
+            self.navigationController?.presentViewController(pkPassViewController, animated: true, completion: nil)
+        }
+        
+       
+        
     }
     
     
