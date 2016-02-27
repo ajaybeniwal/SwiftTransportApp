@@ -56,7 +56,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     
     
     func addToWalletClick(sender:UIButton){
-        let filePath = NSBundle.mainBundle().pathForResource("Transport", ofType: "pkpass")
+        let filePath = NSBundle.mainBundle().pathForResource("BoardinPass", ofType: "pkpass")
         let data = NSData(contentsOfFile: filePath!)
         let pkPass = PKPass(data: data!, error: nil)
         if(pkPass.isPassAlreadyAdded()){

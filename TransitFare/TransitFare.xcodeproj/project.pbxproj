@@ -78,8 +78,8 @@
 		99F3F7801C7FE619002EFFFD /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F3F77F1C7FE619002EFFFD /* PassKit.framework */; };
 		99F3F7881C801B27002EFFFD /* PKPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7871C801B27002EFFFD /* PKPass.swift */; };
 		99F3F7891C801B27002EFFFD /* PKPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7871C801B27002EFFFD /* PKPass.swift */; };
-		99F3F78C1C803689002EFFFD /* Transport.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 99F3F78B1C803689002EFFFD /* Transport.pkpass */; };
-		99F3F78D1C803689002EFFFD /* Transport.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 99F3F78B1C803689002EFFFD /* Transport.pkpass */; };
+		99F3F7981C814290002EFFFD /* BoardinPass.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 99F3F7971C814290002EFFFD /* BoardinPass.pkpass */; };
+		99F3F7991C814290002EFFFD /* BoardinPass.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 99F3F7971C814290002EFFFD /* BoardinPass.pkpass */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,7 +124,7 @@
 		99F3F77F1C7FE619002EFFFD /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		99F3F7811C7FE619002EFFFD /* TransitFare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TransitFare.entitlements; sourceTree = "<group>"; };
 		99F3F7871C801B27002EFFFD /* PKPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKPass.swift; sourceTree = "<group>"; };
-		99F3F78B1C803689002EFFFD /* Transport.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = Transport.pkpass; sourceTree = "<group>"; };
+		99F3F7971C814290002EFFFD /* BoardinPass.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = BoardinPass.pkpass; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,7 +279,7 @@
 		99F3F78A1C803672002EFFFD /* Pass */ = {
 			isa = PBXGroup;
 			children = (
-				99F3F78B1C803689002EFFFD /* Transport.pkpass */,
+				99F3F7971C814290002EFFFD /* BoardinPass.pkpass */,
 			);
 			name = Pass;
 			sourceTree = "<group>";
@@ -372,10 +372,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				993EAEB11C66599400899916 /* background-logo.jpg in Resources */,
+				99F3F7981C814290002EFFFD /* BoardinPass.pkpass in Resources */,
 				998BB9331C4C871D00136EDD /* LaunchScreen.storyboard in Resources */,
 				998BB9301C4C871D00136EDD /* Assets.xcassets in Resources */,
 				998BB92E1C4C871D00136EDD /* Main.storyboard in Resources */,
-				99F3F78C1C803689002EFFFD /* Transport.pkpass in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,10 +384,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				99F3F7751C7F0C40002EFFFD /* background-logo.jpg in Resources */,
+				99F3F7991C814290002EFFFD /* BoardinPass.pkpass in Resources */,
 				99F3F7761C7F0C40002EFFFD /* LaunchScreen.storyboard in Resources */,
 				99F3F7771C7F0C40002EFFFD /* Assets.xcassets in Resources */,
 				99F3F7781C7F0C40002EFFFD /* Main.storyboard in Resources */,
-				99F3F78D1C803689002EFFFD /* Transport.pkpass in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
