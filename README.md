@@ -5,7 +5,7 @@ Below Features are listed in app
 1. My Pass (2D barcode pass which currently fetches the pass from google api for 2d user can customize to download image form his own api)
 2. Purchase a new pass (It will list all possible pass which be purchased currently its fetching data from apiary.io you can hook to your own read apis)
 3. Profile (It will list the billing info and personal info and will provide user to make edit to his profile)
-
+4. APP has features to add pass directly to the apple wallet library , you can directly add your pass directly to apple wallet if pass is not already added to the wallet library.
 
 # Coming Soon
 
