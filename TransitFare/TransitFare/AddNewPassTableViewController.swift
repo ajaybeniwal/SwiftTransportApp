@@ -16,6 +16,7 @@ import Material
 class AddNewPassTableViewController: UITableViewController {
     var productCollection = [ProductModel]()
     var reachability : Reachability?
+    
     @IBOutlet var saveBarItem: UIBarButtonItem!
     @IBAction func saveNewPass(sender: AnyObject) {
         print("clicked on save button")
@@ -27,12 +28,22 @@ class AddNewPassTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
-        getPassData()
-        getCardData()
+        getPassData{
+            () -> Void in
+            self.tableView.reloadData()
+        }
+        getCardData{
+            () -> Void in
+            self.tableView.reloadData()
+        }
         let font = UIFont.boldSystemFontOfSize(18)
         saveBarItem.setTitleTextAttributes([NSFontAttributeName: font], forState:UIControlState.Normal)
         
+       
+        
     }
+    
+   
     
     override func viewDidAppear(animated: Bool) {
         configureNetworkStatus()
@@ -55,17 +66,7 @@ class AddNewPassTableViewController: UITableViewController {
             return
         }
         
-        reachability!.whenReachable = { reachability in
-            // this is called on a background thread, but UI updates must
-            // be on the main thread, like this:
-            dispatch_async(dispatch_get_main_queue()) {
-                if reachability.isReachableViaWiFi() {
-                    print("Reachable via WiFi")
-                } else {
-                    print("Reachable via Cellular")
-                }
-            }
-        }
+       
         reachability!.whenUnreachable = { reachability in
             // this is called on a background thread, but UI updates must
             // be on the main thread, like this:
@@ -85,12 +86,13 @@ class AddNewPassTableViewController: UITableViewController {
     
      /*Fetch the credit card data using alamofire */
     
-    func getCardData() -> Void{
+    func getCardData(completionBlock:()->Void) -> Void{
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
             {
                 (response) -> Void in
                 if let value = response.result.value {
+                    self.cardCollection.removeAll()
                     let json = JSON(value)
                     print(json)
                     let data = json["data"]
@@ -100,8 +102,8 @@ class AddNewPassTableViewController: UITableViewController {
                         self.cardCollection.append(_cardModel)
                         
                     }
-                    self.tableView.reloadData()
                     progressHUD.hide(true)
+                    completionBlock()
                     
                 }
                 else{
@@ -115,11 +117,12 @@ class AddNewPassTableViewController: UITableViewController {
     
     /*Fetch the product data and the credit card data from the api using alamofire */
     
-    func getPassData()->Void{
+    func getPassData(completionBlock:()->Void)->Void{
         Alamofire.request(.GET, APIUtility.getEndPointURL("fareLookup")).responseJSON(completionHandler:
             {
                 (response) -> Void in
                 if let value = response.result.value {
+                    self.productCollection.removeAll()
                     let json = JSON(value)
                     let data = json["data"]
                     for (_,subJson):(String, JSON) in data {
@@ -127,7 +130,8 @@ class AddNewPassTableViewController: UITableViewController {
                         self.productCollection.append(_productModel)
                         
                     }
-                    self.tableView.reloadData()
+                    completionBlock()
+                    
                     
                     
                 }
@@ -249,6 +253,20 @@ class AddNewPassTableViewController: UITableViewController {
         header.textLabel?.textColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
         header.textLabel?.font = UIFont.boldSystemFontOfSize(16)
+        
+    }
+    
+    @IBAction func refreshControl(sender: UIRefreshControl) {
+     
+        getCardData{
+            () -> Void in
+            self.tableView.reloadData()
+            sender.endRefreshing();
+        }
+        getPassData{
+            () -> Void in
+            self.tableView.reloadData()
+        }
         
     }
     

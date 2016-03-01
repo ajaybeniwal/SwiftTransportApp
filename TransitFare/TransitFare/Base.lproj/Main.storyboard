@@ -189,6 +189,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jD2-4i-wTo">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshControl:" destination="NF1-cz-Vf0" eventType="valueChanged" id="IoG-1R-Zyl"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="saveBarItem" destination="vGC-qR-Xyi" id="JbX-Q0-6Lb"/>
                         <segue destination="Svj-XZ-7N3" kind="presentation" identifier="addCardFromPass" id="fuL-V5-Gh8"/>
@@ -495,6 +501,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IWZ-sp-zoG"/>
-        <segue reference="QAv-Mk-F6X"/>
+        <segue reference="fuL-V5-Gh8"/>
     </inferredMetricsTieBreakers>
 </document>
