@@ -166,7 +166,7 @@ class LoginViewController: UIViewController {
 
     }
     func registerClick(sender:UIButton){
-        self.presentViewController(RegisterViewController(), animated: true, completion: nil)
+        self.showViewController(RegisterViewController(), sender: self)
     }
     
     /*

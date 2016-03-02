@@ -40,15 +40,18 @@ class MoreTableViewController: UITableViewController {
     @IBAction func signOutClick(sender: AnyObject) {
         print(NSThread.isMainThread())
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        PFUser.logOut()
-            dispatch_after(1, dispatch_get_main_queue(),{ () -> Void in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            PFUser.logOut()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 progressHUD.hide(true);
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 appDelegate.window?.rootViewController = LoginViewController()
                 self.navigationController?.popToRootViewControllerAnimated(true)
             })
+        }
+        
             
-            
+        
             
         
      

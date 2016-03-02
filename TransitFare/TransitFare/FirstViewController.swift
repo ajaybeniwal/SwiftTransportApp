@@ -12,6 +12,8 @@ import QuartzCore
 import Material
 import PassKit
 import SnapKit
+import MBProgressHUD
+import Alamofire
 
 @available(iOS 9.0, *)
 class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
@@ -28,7 +30,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
         
     }
     
-  
+    
     
     func prepareAddtoWalletButton(){
         addPassButton = PKAddPassButton()
@@ -56,7 +58,12 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     
     
     func addToWalletClick(sender:UIButton){
-        let filePath = NSBundle.mainBundle().pathForResource("BoardinPass", ofType: "pkpass")
+        
+        let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let passDownloadURL = "https://walletpass.herokuapp.com/v1/passes/123/245"
+        
+        /*Ajay added comment to depreceated old changes for blog post at medium*/
+       /* let filePath = NSBundle.mainBundle().pathForResource("BoardinPass", ofType: "pkpass")
         let data = NSData(contentsOfFile: filePath!)
         let pkPass = PKPass(data: data!, error: nil)
         if(pkPass.isPassAlreadyAdded()){
@@ -66,9 +73,29 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
             let pkPassViewController = PKAddPassesViewController(pass: pkPass)
             pkPassViewController.delegate = self;
             self.navigationController?.presentViewController(pkPassViewController, animated: true, completion: nil)
-        }
+        }*/
         
-       
+        
+        Alamofire.request(.GET, passDownloadURL).responseData{
+            (response) -> Void in
+            progressHUD.hide(true)
+            if let passValue = response.result.value{
+                let pkPass = PKPass(data: passValue, error: nil)
+                if(pkPass.isPassAlreadyAdded()){
+                    self.showAlert("Failure", message:"The pass is already added to library")
+                }
+                else{
+                    let pkPassViewController = PKAddPassesViewController(pass: pkPass)
+                    pkPassViewController.delegate = self;
+                    self.navigationController?.presentViewController(pkPassViewController, animated: true, completion: nil)
+                    
+                }
+            }
+            else{
+                print("error while fetching the url contents")
+            }
+            
+        }
         
     }
     
@@ -90,7 +117,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     }
     
     @IBAction func addButtonClick(sender: AnyObject) {
-       
+        
     }
     
     

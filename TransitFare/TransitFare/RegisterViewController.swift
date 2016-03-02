@@ -164,12 +164,16 @@ class RegisterViewController: UIViewController {
                self.showAlert("Error", message: "Error while creating user")
             }
             else{
-                self.showAlertWithAction("Success", message: "User created sucessfully")
+                self.showAlertWithActionCallback("Success", message: "User created successfully", callback: { (action) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
             }
         }
         
         
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
