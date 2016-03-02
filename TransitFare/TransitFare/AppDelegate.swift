@@ -65,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recived remote notification");
+        NSLog("Remote Notification user info is%", userInfo)
     }
     
     func applicationWillResignActive(application: UIApplication) {

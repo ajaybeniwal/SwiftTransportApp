@@ -9,6 +9,7 @@
 import UIKit
 import Material
 import Parse
+import MBProgressHUD
 
 class MoreTableViewController: UITableViewController {
     @IBOutlet var profileImageView: UIImageView!
@@ -37,15 +38,20 @@ class MoreTableViewController: UITableViewController {
     }
     
     @IBAction func signOutClick(sender: AnyObject) {
-        showAlertWithActionCallback("Logout", message: "Are u sure you want to logout"){
-            (action) in
-            PFUser.logOut()
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            appDelegate.window?.rootViewController = LoginViewController()
-            self.navigationController?.popToRootViewControllerAnimated(true)
+        print(NSThread.isMainThread())
+        let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        PFUser.logOut()
+            dispatch_after(1, dispatch_get_main_queue(),{ () -> Void in
+                progressHUD.hide(true);
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.window?.rootViewController = LoginViewController()
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            })
             
-        }
-       // PFUser.logOut()
+            
+            
+        
+     
     }
 
     // MARK: - Table view data source
