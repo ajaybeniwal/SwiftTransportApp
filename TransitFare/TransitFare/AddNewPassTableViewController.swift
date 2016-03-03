@@ -89,7 +89,7 @@ class AddNewPassTableViewController: UITableViewController {
     func getCardData(completionBlock:()->Void) -> Void{
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
-            {
+            { [unowned self]
                 (response) -> Void in
                 if let value = response.result.value {
                     self.cardCollection.removeAll()
@@ -119,7 +119,7 @@ class AddNewPassTableViewController: UITableViewController {
     
     func getPassData(completionBlock:()->Void)->Void{
         Alamofire.request(.GET, APIUtility.getEndPointURL("fareLookup")).responseJSON(completionHandler:
-            {
+            {[unowned self]
                 (response) -> Void in
                 if let value = response.result.value {
                     self.productCollection.removeAll()

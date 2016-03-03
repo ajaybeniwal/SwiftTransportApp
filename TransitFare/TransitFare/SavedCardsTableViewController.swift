@@ -33,7 +33,7 @@ class SavedCardsTableViewController: UITableViewController {
     func getCardData() -> Void{
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
-            {
+            { [unowned self]
                 (response) -> Void in
                 if let value = response.result.value {
                     let json = JSON(value)
