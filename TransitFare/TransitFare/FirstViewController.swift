@@ -21,13 +21,43 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     @IBOutlet var cardContainer: UIView!
     @IBOutlet var passCacheImageView: UIImageView!
     var addPassButton:PKAddPassButton!
+    var addNewPassButton :FabButton!
+    var addNewCreditCardButton:FabButton!
+    var isMenuOpen:Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
         passCacheImageView.kf_setImageWithURL(NSURL(string: "https://chart.googleapis.com/chart?cht=qr&chl=9871116244&choe=UTF-8&chs=280x280")!)
         prepareFabButton()
         prepareAddtoWalletButton()
-        self.addNewButton!.hidden = true
-        
+        prepareAddNewPassButton()
+        prepareAddNewCreditCardButton()
+        self.addNewButton!.hidden = false
+        isMenuOpen = false;
+    }
+    
+    func prepareAddNewPassButton(){
+        let img: UIImage? = UIImage(named: "Wallet")
+        addNewPassButton = FabButton(frame: CGRectMake(175, 315, 48, 48))
+        addNewPassButton.setImage(img, forState: .Normal)
+        addNewPassButton.setImage(img, forState: .Highlighted)
+        addNewPassButton.tintColor = UIColor.whiteColor()
+         addNewPassButton.backgroundColor = MaterialColor.pink.base
+        addNewPassButton.hidden = true
+        addNewPassButton.alpha = 0
+        // Add button to UIViewController.
+        view.addSubview(addNewPassButton)
+    }
+    
+    func prepareAddNewCreditCardButton(){
+        let img: UIImage? = UIImage(named: "creditcard")
+        addNewCreditCardButton = FabButton(frame: CGRectMake(175, 400, 48, 48))
+        addNewCreditCardButton.setImage(img, forState: .Normal)
+        addNewCreditCardButton.setImage(img, forState: .Highlighted)
+        addNewCreditCardButton.tintColor = UIColor.whiteColor()
+         addNewCreditCardButton.backgroundColor = MaterialColor.pink.base
+        addNewCreditCardButton.hidden = true
+        addNewCreditCardButton.alpha = 0
+        view.addSubview(addNewCreditCardButton)
     }
     
     
@@ -50,10 +80,66 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     }
     func prepareFabButton() {
         addNewButton.backgroundColor = MaterialColor.pink.base
-        let img: UIImage? = UIImage(named: "AddNew")
+        let img: UIImage? = UIImage(named: "addpass")
         addNewButton.setImage(img, forState: .Normal)
         addNewButton.setImage(img, forState: .Highlighted)
         addNewButton.tintColor = UIColor.whiteColor()
+        addNewButton.addTarget(self, action: "addNewButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    
+    func addNewButtonClick(sender:UIButton){
+     self.addNewButton.animate(MaterialAnimation.rotate(1/8))
+     
+        let duration = 0.3
+        let delay = 0.0
+        let options = UIViewKeyframeAnimationOptions.CalculationModeLinear
+        if(!isMenuOpen!){
+            addNewPassButton.hidden = false;
+            addNewCreditCardButton.hidden = false;
+            UIView.animateKeyframesWithDuration(duration, delay: delay, options: options, animations: {
+                () -> Void in
+                
+                
+                UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/2, animations: {
+                    self.addNewPassButton.transform = CGAffineTransformMakeScale(1.1, 1.1)
+                    self.addNewPassButton.alpha = 0.6
+                    self.addNewCreditCardButton.transform = CGAffineTransformMakeScale(1.1, 1.1)
+                    self.addNewCreditCardButton.alpha = 0.6
+                    
+                })
+                
+                UIView.addKeyframeWithRelativeStartTime(1/2, relativeDuration: 1/2, animations: {
+                    self.addNewCreditCardButton.alpha = 1
+                    self.addNewPassButton.alpha = 1
+                    self.addNewCreditCardButton.transform = CGAffineTransformMakeScale(1,1)
+                    self.addNewPassButton.transform = CGAffineTransformMakeScale(1,1)
+                    
+                })
+                
+                }, completion: {finished in
+                    // any code entered here will be applied
+                    // once the animation has completed
+                    
+            })
+            isMenuOpen = !isMenuOpen!
+        }
+        else{
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                
+                self.addNewPassButton.alpha = 0
+               self.addNewCreditCardButton.alpha = 0
+              
+                }, completion: {
+                    (complete) -> Void in
+                    self.addNewPassButton.hidden = true;
+                    self.addNewCreditCardButton.hidden = true;
+            })
+            isMenuOpen = !isMenuOpen!
+        }
+       
+    
+        
     }
     
     
@@ -61,20 +147,6 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
         
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         let passDownloadURL = "https://walletpass.herokuapp.com/v1/passes/123/245"
-        
-        /*Ajay added comment to depreceated old changes for blog post at medium*/
-       /* let filePath = NSBundle.mainBundle().pathForResource("BoardinPass", ofType: "pkpass")
-        let data = NSData(contentsOfFile: filePath!)
-        let pkPass = PKPass(data: data!, error: nil)
-        if(pkPass.isPassAlreadyAdded()){
-            self.showAlert("Failure", message:"The pass is already added to library")
-        }
-        else{
-            let pkPassViewController = PKAddPassesViewController(pass: pkPass)
-            pkPassViewController.delegate = self;
-            self.navigationController?.presentViewController(pkPassViewController, animated: true, completion: nil)
-        }*/
-        
         
         Alamofire.request(.GET, passDownloadURL).responseData{
             (response) -> Void in

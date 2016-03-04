@@ -63,10 +63,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkU-3D-hkK" customClass="FabButton" customModule="Material">
-                                <rect key="frame" x="508" y="465" width="64" height="64"/>
+                                <rect key="frame" x="524" y="481" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="TdV-xz-I59"/>
-                                    <constraint firstAttribute="width" constant="64" id="rhj-OY-S3d"/>
+                                    <constraint firstAttribute="height" constant="48" id="TdV-xz-I59"/>
+                                    <constraint firstAttribute="width" constant="48" id="rhj-OY-S3d"/>
                                 </constraints>
                                 <connections>
                                     <action selector="addButtonClick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="CmX-oV-F7Y"/>
