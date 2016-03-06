@@ -25,7 +25,7 @@ class AddNewPassTableViewController: UITableViewController {
     var cardCollection = [CreditCardModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.scrollsToTop = true;
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 160.0
         getPassData{

@@ -87,6 +87,7 @@
                         <outlet property="addNewButton" destination="OkU-3D-hkK" id="o10-ly-AM0"/>
                         <outlet property="cardContainer" destination="cH3-k7-sj2" id="Jct-Vp-ywV"/>
                         <outlet property="passCacheImageView" destination="iqo-rS-IVZ" id="e4r-Xd-F8S"/>
+                        <segue destination="Svj-XZ-7N3" kind="presentation" identifier="presentCardFromPass" id="bIH-w0-mW3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -216,6 +217,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BV7-h0-uU6" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="xYM-CH-cVS" kind="relationship" relationship="viewControllers" id="UEX-Ae-hsW"/>
                         <segue destination="IG4-c7-HqI" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="dGw-zB-TVX" kind="relationship" relationship="viewControllers" id="5iD-65-AbO"/>
                         <segue destination="e5F-Ye-Qlq" kind="relationship" relationship="viewControllers" id="QPA-zk-rFx"/>
@@ -223,7 +225,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-170" y="758"/>
         </scene>
         <!--MyPass-->
         <scene sceneID="3Zz-kv-DhA">
@@ -489,6 +491,46 @@
             </objects>
             <point key="canvasLocation" x="750" y="1799"/>
         </scene>
+        <!--My Tickets-->
+        <scene sceneID="CEv-oD-cqi">
+            <objects>
+                <viewController id="KYO-iC-2PE" customClass="TicketViewController" customModule="TransitFare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q3K-5z-HZI"/>
+                        <viewControllerLayoutGuide type="bottom" id="TPs-G6-v1j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lB6-gb-ssF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Tickets" id="VIX-JF-cGQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8ct-1c-oI4"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fs4-JO-4la" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1938" y="2509"/>
+        </scene>
+        <!--Tickets-->
+        <scene sceneID="Wef-Wb-uGG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xYM-CH-cVS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tickets" image="ticket" id="Uca-aw-CT5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fHJ-9q-3kv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KYO-iC-2PE" kind="relationship" relationship="rootViewController" id="Opk-Tj-vdY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tga-2R-d3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="2503"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Amex" width="73" height="44"/>
@@ -498,9 +540,10 @@
         <image name="account" width="24" height="24"/>
         <image name="addpass" width="24" height="24"/>
         <image name="bus" width="24" height="24"/>
+        <image name="ticket" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IWZ-sp-zoG"/>
-        <segue reference="fuL-V5-Gh8"/>
+        <segue reference="QAv-Mk-F6X"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -80,6 +80,10 @@
 		99F3F7891C801B27002EFFFD /* PKPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7871C801B27002EFFFD /* PKPass.swift */; };
 		99F3F7A11C81D168002EFFFD /* BoardinPass.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 99F3F7A01C81D168002EFFFD /* BoardinPass.pkpass */; };
 		99F3F7A21C81D168002EFFFD /* BoardinPass.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 99F3F7A01C81D168002EFFFD /* BoardinPass.pkpass */; };
+		99F3F7C61C8BE2D0002EFFFD /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7C51C8BE2D0002EFFFD /* TicketViewController.swift */; };
+		99F3F7C81C8BE5CB002EFFFD /* TicketDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7C71C8BE5CB002EFFFD /* TicketDataSource.swift */; };
+		99F3F7CA1C8BE6D2002EFFFD /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7C91C8BE6D2002EFFFD /* TicketModel.swift */; };
+		99F3F7CC1C8BF0FD002EFFFD /* TicketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F3F7CB1C8BF0FD002EFFFD /* TicketViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +129,10 @@
 		99F3F7811C7FE619002EFFFD /* TransitFare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TransitFare.entitlements; sourceTree = "<group>"; };
 		99F3F7871C801B27002EFFFD /* PKPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKPass.swift; sourceTree = "<group>"; };
 		99F3F7A01C81D168002EFFFD /* BoardinPass.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = BoardinPass.pkpass; sourceTree = "<group>"; };
+		99F3F7C51C8BE2D0002EFFFD /* TicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		99F3F7C71C8BE5CB002EFFFD /* TicketDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketDataSource.swift; sourceTree = "<group>"; };
+		99F3F7C91C8BE6D2002EFFFD /* TicketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
+		99F3F7CB1C8BF0FD002EFFFD /* TicketViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +216,7 @@
 		998BB9251C4C871D00136EDD /* TransitFare */ = {
 			isa = PBXGroup;
 			children = (
+				99F3F7C11C8BE154002EFFFD /* Tickets */,
 				99F3F7811C7FE619002EFFFD /* TransitFare.entitlements */,
 				998BB9261C4C871D00136EDD /* AppDelegate.swift */,
 				998BB9281C4C871D00136EDD /* FirstViewController.swift */,
@@ -282,6 +291,41 @@
 				99F3F7A01C81D168002EFFFD /* BoardinPass.pkpass */,
 			);
 			name = Pass;
+			sourceTree = "<group>";
+		};
+		99F3F7C11C8BE154002EFFFD /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				99F3F7C41C8BE1FF002EFFFD /* Model */,
+				99F3F7C31C8BE1F6002EFFFD /* ViewController */,
+				99F3F7C21C8BE162002EFFFD /* View */,
+			);
+			name = Tickets;
+			sourceTree = "<group>";
+		};
+		99F3F7C21C8BE162002EFFFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99F3F7CB1C8BF0FD002EFFFD /* TicketViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		99F3F7C31C8BE1F6002EFFFD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				99F3F7C51C8BE2D0002EFFFD /* TicketViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		99F3F7C41C8BE1FF002EFFFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99F3F7C71C8BE5CB002EFFFD /* TicketDataSource.swift */,
+				99F3F7C91C8BE6D2002EFFFD /* TicketModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,16 +499,20 @@
 				993EAF171C72B59200899916 /* CountryEnum.swift in Sources */,
 				99EE0B3E1C77113F00CFFB1C /* Reachability.swift in Sources */,
 				99F3F7881C801B27002EFFFD /* PKPass.swift in Sources */,
+				99F3F7CA1C8BE6D2002EFFFD /* TicketModel.swift in Sources */,
 				999C63E71C5913BE00822ECF /* CreditCard.swift in Sources */,
 				999C63DC1C57B22300822ECF /* APIUtility.swift in Sources */,
 				993EAF191C73524100899916 /* BusTimingViewController.swift in Sources */,
 				99EE0B441C78181800CFFB1C /* MoreTableViewController.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
+				99F3F7CC1C8BF0FD002EFFFD /* TicketViewCell.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
+				99F3F7C81C8BE5CB002EFFFD /* TicketDataSource.swift in Sources */,
 				99EE0B461C784B4300CFFB1C /* SavedCardsTableViewCell.swift in Sources */,
 				993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */,
 				993EAEAC1C66555B00899916 /* LoginViewController.swift in Sources */,
 				999C63E51C59137800822ECF /* Product.swift in Sources */,
+				99F3F7C61C8BE2D0002EFFFD /* TicketViewController.swift in Sources */,
 				993EAEB61C68693D00899916 /* HomeViewController.swift in Sources */,
 				99EE0B401C77247300CFFB1C /* UIAlertAPI.swift in Sources */,
 			);

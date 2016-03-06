@@ -37,7 +37,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     
     func prepareAddNewPassButton(){
         let img: UIImage? = UIImage(named: "Wallet")
-        addNewPassButton = FabButton(frame: CGRectMake(175, 315, 48, 48))
+        addNewPassButton = FabButton()
         addNewPassButton.setImage(img, forState: .Normal)
         addNewPassButton.setImage(img, forState: .Highlighted)
         addNewPassButton.tintColor = UIColor.whiteColor()
@@ -46,11 +46,28 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
         addNewPassButton.alpha = 0
         // Add button to UIViewController.
         view.addSubview(addNewPassButton)
+        
+        self.addNewPassButton!.snp_makeConstraints{ (make) -> Void in
+            make.width.equalTo(48)
+            make.height.equalTo(48)
+            make.trailing.equalTo(self.addNewButton.snp_leading).offset(-128)
+            
+            make.bottom.equalTo(self.addNewButton.snp_bottom)
+            
+        }
+        
+        
+        addNewPassButton.addTarget(self, action: "addNewPass:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    
+    func addNewPass(sender:UIButton){
+        self.tabBarController?.selectedIndex = 1;
     }
     
     func prepareAddNewCreditCardButton(){
         let img: UIImage? = UIImage(named: "creditcard")
-        addNewCreditCardButton = FabButton(frame: CGRectMake(175, 400, 48, 48))
+        addNewCreditCardButton = FabButton()
         addNewCreditCardButton.setImage(img, forState: .Normal)
         addNewCreditCardButton.setImage(img, forState: .Highlighted)
         addNewCreditCardButton.tintColor = UIColor.whiteColor()
@@ -58,9 +75,26 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
         addNewCreditCardButton.hidden = true
         addNewCreditCardButton.alpha = 0
         view.addSubview(addNewCreditCardButton)
+        
+        self.addNewCreditCardButton!.snp_makeConstraints{ (make) -> Void in
+           make.width.equalTo(48)
+           make.height.equalTo(48)
+           make.trailing.equalTo(self.addNewButton.snp_leading).offset(-40)
+            
+           make.bottom.equalTo(self.addNewButton.snp_bottom)
+            
+        }
+        
+        addNewCreditCardButton.addTarget(self, action: "addNewCreditCard:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        
     }
     
     
+    func addNewCreditCard(sender:UIButton){
+        self.performSegueWithIdentifier("presentCardFromPass", sender: sender)
+   }
     
     func prepareAddtoWalletButton(){
         addPassButton = PKAddPassButton()
