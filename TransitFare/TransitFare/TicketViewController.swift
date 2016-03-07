@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class TicketViewController: UIViewController,UITableViewDelegate {
 let globalNavigationBarHeight = 64

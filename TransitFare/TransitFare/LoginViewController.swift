@@ -148,12 +148,13 @@ class LoginViewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             progressHUD.hide(true)
             if user != nil {
+                
+             let installation = PFInstallation.currentInstallation()
+             installation["user"] = PFUser.currentUser()
+             installation.saveInBackground()
+             installation.addUniqueObject("Giants", forKey: "channels")
              let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
              appDelegate.window?.rootViewController = appDelegate.tabViewController
-             
-            
-                
-                
                 
             } else {
                 self.showAlert("Error", message: "Wrong username or password")
