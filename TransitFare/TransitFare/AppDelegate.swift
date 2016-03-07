@@ -17,17 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabViewController :UITabBarController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+        
+        
+        
         // Override point for customization after application launch.
         let textAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().tintColor =  UIColor.whiteColor()
         UINavigationBar.appearance().barTintColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().barStyle = UIBarStyle.Black
-        
         let types = UIUserNotificationSettings(forTypes: [.Alert, .Badge],categories: nil)
-        
         UIApplication.sharedApplication().registerUserNotificationSettings(types)
         UIApplication.sharedApplication().registerForRemoteNotifications()
+        
+        if let notificationPayLoad = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
+             let photoId = notificationPayLoad["p"] as? NSString
+            print(photoId);
+        }
+        
         
         /* Setting the login controller as root view controler */
         let parseConfiguration = ParseClientConfiguration {
@@ -36,11 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://swifttransportapp.herokuapp.com/parse"
         }
         Parse.initializeWithConfiguration(parseConfiguration)
-        print(self.window?.rootViewController)
-        self.tabViewController = self.window?.rootViewController as? UITabBarController
-        print(self.tabViewController)
-        
-        
         let currentUser = PFUser.currentUser()
         if currentUser == nil {
             self.window?.rootViewController = LoginViewController()
@@ -63,6 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("failed to register for remote notifications:  (error)")
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        NSLog("failed to register for remote notifications:  (error)")
+    }
+    
+    
+    
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Recived remote notification");
         NSLog("Remote Notification user info is%", userInfo)
@@ -81,6 +91,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         
     }
     
