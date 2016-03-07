@@ -69,6 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         NSLog("failed to register for remote notifications:  (error)")
+        
+        if(application.applicationState == .Inactive){
+            print("Called from background")
+        }
+        
     }
     
     
