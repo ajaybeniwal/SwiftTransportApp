@@ -123,7 +123,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     
     
     func addNewButtonClick(sender:UIButton){
-     self.addNewButton.animate(MaterialAnimation.rotate(1/8))
+     self.addNewButton.animate(MaterialAnimation.rotate(angle: 1/8))
      
         let duration = 0.3
         let delay = 0.0
