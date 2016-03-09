@@ -3,19 +3,27 @@
   <testsuite name="fastlane.lanes">
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.000369">
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.000367">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.00039">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000231">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: carthage" time="201.816961">
+      <testcase classname="fastlane.lanes" name="2: sigh" time="12.166511">
         
-          <failure message="/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/actions/actions_helper.rb:33:in `execute_action'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:129:in `block in execute_action'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:128:in `chdir'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:128:in `execute_action'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/fast_file.rb:149:in `method_missing'&#10;Fastfile:27:in `block (2 levels) in parsing_binding'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:49:in `call'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:46:in `chdir'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/runner.rb:46:in `execute'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/lane_manager.rb:46:in `cruise_lane'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/lib/fastlane/command_line_handler.rb:30:in `handle'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/bin/fastlane:38:in `block (2 levels) in run'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/command.rb:178:in `call'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/command.rb:178:in `call'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/command.rb:153:in `run'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/runner.rb:428:in `run_active_command'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane_core-0.37.0/lib/fastlane_core/ui/fastlane_runner.rb:23:in `run!'&#10;/Library/Ruby/Gems/2.0.0/gems/commander-4.3.5/lib/commander/delegates.rb:15:in `run!'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/bin/fastlane:156:in `run'&#10;/Library/Ruby/Gems/2.0.0/gems/fastlane-1.66.0/bin/fastlane:162:in `&lt;top (required)&gt;'&#10;/usr/local/bin/fastlane:23:in `load'&#10;/usr/local/bin/fastlane:23:in `&lt;main&gt;'&#10;&#10;Exit status of command 'carthage bootstrap' was 1 instead of 0.&#10;xcodebuild timed out while trying to read Parse.xcworkspace 😭&#10;*** Checking out Kingfisher at &quot;2.0.4&quot;&#10;*** Checking out SnapKit at &quot;0.19.1&quot;&#10;*** Checking out MBProgressHUD at &quot;0.9.2&quot;&#10;*** Downloading Parse-SDK-iOS-OSX.framework binary at &quot;1.12.0&quot;&#10;*** Checking out Parse-SDK-iOS-OSX at &quot;1.12.0&quot;&#10;*** Checking out Alamofire at &quot;3.2.1&quot;&#10;*** Checking out Material at &quot;1.35.3&quot;&#10;*** Checking out SwiftyJSON at &quot;2.3.3&quot;&#10;*** Checking out Eureka at &quot;1.4.1&quot;&#10;*** Checking out Bolts-iOS at &quot;1.6.0&quot;&#10;*** xcodebuild output can be found in /var/folders/h0/n48xhpys7gx3krtnwd3t518w02mj3p/T/carthage-xcodebuild.rRuwHO.log&#10;*** Building scheme &quot;Alamofire OSX&quot; in Alamofire.xcworkspace&#10;*** Building scheme &quot;Alamofire iOS&quot; in Alamofire.xcworkspace&#10;" />
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: update_project_provisioning" time="0.508372">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: gym" time="65.720021">
         
       </testcase>
     
