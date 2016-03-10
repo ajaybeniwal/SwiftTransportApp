@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
-        
-        
-        
         // Override point for customization after application launch.
         let textAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         UINavigationBar.appearance().titleTextAttributes = textAttributes
@@ -33,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
         if let notificationPayLoad = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
-             let photoId = notificationPayLoad["p"] as? NSString
-            print(photoId);
+             let orderId = notificationPayLoad["orderId"] as? NSString
+            print(orderId);
         }
         
         
@@ -68,11 +64,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        NSLog("failed to register for remote notifications:  (error)")
+        if let orderId: String = userInfo["orderId"] as? String {
+            print(orderId)
+        }
         
         if(application.applicationState == .Inactive){
             print("Called from background")
         }
+        
+        completionHandler(UIBackgroundFetchResult.NewData)
         
     }
     
