@@ -64,23 +64,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        if let orderId: String = userInfo["orderId"] as? String {
-            print(orderId)
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            if(application.applicationState == .Inactive){
+                if let _: String = userInfo["orderId"] as? String {
+                    let tabBar :UITabBarController = self.window?.rootViewController as! UITabBarController;
+                    if let viewController = tabBar.viewControllers?[4]{
+                        tabBar.selectedViewController = viewController
+                        if let navController = viewController as? UINavigationController{
+                           let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("savedCardStoryBoard") as UIViewController
+                            navController.pushViewController(viewController, animated: true)
+                        }
+                    }
+                }
+            }
+            completionHandler(UIBackgroundFetchResult.NewData)
         }
-        
-        if(application.applicationState == .Inactive){
-            print("Called from background")
+        else{
+            completionHandler(UIBackgroundFetchResult.Failed)
         }
-        
-        completionHandler(UIBackgroundFetchResult.NewData)
-        
     }
     
-    
-    
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("Recived remote notification");
-        NSLog("Remote Notification user info is%", userInfo)
+       
     }
     
     func applicationWillResignActive(application: UIApplication) {
