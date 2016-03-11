@@ -28,12 +28,15 @@ class TransportAppUITests: XCTestCase {
         super.tearDown()
     }
     
+   
+    
     func testExample() {
         
         let app = XCUIApplication()
         let button = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.Button).elementBoundByIndex(3)
         button.tap()
         button.tap()
+        snapshot("0SignIn")
         
         let tabBarsQuery = app.tabBars
         let ticketsButton = tabBarsQuery.buttons["Tickets"]
