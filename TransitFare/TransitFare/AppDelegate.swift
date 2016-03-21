@@ -24,7 +24,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor =  UIColor.whiteColor()
         UINavigationBar.appearance().barTintColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().barStyle = UIBarStyle.Black
-        let types = UIUserNotificationSettings(forTypes: [.Alert, .Badge],categories: nil)
+        
+        //Adding Categories for push Notifications
+        
+        let purchasePassType = UIMutableUserNotificationAction()
+        purchasePassType.identifier = ActionCategory.Purchase.rawValue
+        purchasePassType.title = "Purchase Pass"
+        purchasePassType.activationMode = .Background
+        purchasePassType.destructive = false
+        
+        let cancelPurchasePassType = UIMutableUserNotificationAction()
+        cancelPurchasePassType.identifier = ActionCategory.Cancel.rawValue
+        cancelPurchasePassType.title = "Cancel"
+        cancelPurchasePassType.activationMode = .Background
+        cancelPurchasePassType.destructive = true
+        
+        
+        let passCategory = UIMutableUserNotificationCategory()
+        passCategory.identifier = "PURCHASE_PASS_CATEGORY"
+        passCategory.setActions([purchasePassType,cancelPurchasePassType], forContext:.Default)
+        let categorySets:Set<UIUserNotificationCategory> = [passCategory];
+         // End Categories
+        let types = UIUserNotificationSettings(forTypes: [.Alert, .Badge],categories:categorySets)
+        
         UIApplication.sharedApplication().registerUserNotificationSettings(types)
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
@@ -62,6 +84,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         NSLog("failed to register for remote notifications:  (error)")
     }
+    
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+       
+        if(TransitFareClient.sharedInstance.IsLoggedIn()){
+            
+            if(identifier==ActionCategory.Purchase.rawValue){
+                print("clicked on purchase")
+            }
+            else{
+                print("clicked on cancel")
+            }
+            
+        }
+        else{
+            self.window?.rootViewController = LoginViewController()
+        }
+        
+        completionHandler()
+        
+        
+    }
+    
+    // Handling click of push notification
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         let currentUser = PFUser.currentUser()

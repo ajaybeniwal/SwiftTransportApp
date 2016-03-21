@@ -42,6 +42,11 @@ class TransitFareClient: NSObject {
         PFUser.logOut()
     }
     
+    func IsLoggedIn() -> Bool{
+        let currentUser = PFUser.currentUser()
+        return currentUser != nil ? true : false
+    }
+    
     /**
      remove all cookies
      */
