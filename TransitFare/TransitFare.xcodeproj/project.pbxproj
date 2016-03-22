@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B12BFEE1C9FFBF600923C8A /* ActionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12BFED1C9FFBF600923C8A /* ActionCategory.swift */; };
 		0B9970161C93D4CD00FDCBFB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */; };
+		0BB7C8801CA17BA60075DF94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7C87F1CA17BA60075DF94 /* Category.swift */; };
 		0BCF6BC91C92C03B00C11F4E /* TransportAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF6BC81C92C03B00C11F4E /* TransportAppUITests.swift */; };
 		993EAEA51C620B2200899916 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEA41C620B2200899916 /* Material.framework */; };
 		993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */; };
@@ -100,8 +100,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B12BFED1C9FFBF600923C8A /* ActionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCategory.swift; sourceTree = "<group>"; };
 		0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		0BB7C87F1CA17BA60075DF94 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0BCF6BC61C92C03B00C11F4E /* TransportAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransportAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCF6BC81C92C03B00C11F4E /* TransportAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportAppUITests.swift; sourceTree = "<group>"; };
 		0BCF6BCA1C92C03B00C11F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 				999C63E41C59137800822ECF /* Product.swift */,
 				999C63E61C5913BE00822ECF /* CreditCard.swift */,
 				993EAF161C72B59100899916 /* CountryEnum.swift */,
-				0B12BFED1C9FFBF600923C8A /* ActionCategory.swift */,
+				0BB7C87F1CA17BA60075DF94 /* Category.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -583,13 +583,13 @@
 				99EE0B441C78181800CFFB1C /* MoreTableViewController.swift in Sources */,
 				998BB9291C4C871D00136EDD /* FirstViewController.swift in Sources */,
 				99F3F7CC1C8BF0FD002EFFFD /* TicketViewCell.swift in Sources */,
-				0B12BFEE1C9FFBF600923C8A /* ActionCategory.swift in Sources */,
 				999C63DA1C577E8E00822ECF /* AddNewPassTableViewController.swift in Sources */,
 				99F3F7C81C8BE5CB002EFFFD /* TicketDataSource.swift in Sources */,
 				99EE0B461C784B4300CFFB1C /* SavedCardsTableViewCell.swift in Sources */,
 				993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */,
 				993EAEAC1C66555B00899916 /* LoginViewController.swift in Sources */,
 				999C63E51C59137800822ECF /* Product.swift in Sources */,
+				0BB7C8801CA17BA60075DF94 /* Category.swift in Sources */,
 				99F3F7C61C8BE2D0002EFFFD /* TicketViewController.swift in Sources */,
 				993EAEB61C68693D00899916 /* HomeViewController.swift in Sources */,
 				99EE0B401C77247300CFFB1C /* UIAlertAPI.swift in Sources */,

@@ -24,6 +24,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
     var addNewPassButton :FabButton!
     var addNewCreditCardButton:FabButton!
     var isMenuOpen:Bool?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         passCacheImageView.kf_setImageWithURL(NSURL(string: "https://chart.googleapis.com/chart?cht=qr&chl=9871116244&choe=UTF-8&chs=280x280")!)
