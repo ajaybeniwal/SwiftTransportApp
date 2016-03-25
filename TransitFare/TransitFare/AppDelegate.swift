@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let purchasePassType = UIMutableUserNotificationAction()
         purchasePassType.identifier = ActionCategory.Purchase.rawValue
         purchasePassType.title = "Purchase Pass"
-        purchasePassType.activationMode = .Background
+        purchasePassType.activationMode = .Foreground
         purchasePassType.destructive = false
         
         let cancelPurchasePassType = UIMutableUserNotificationAction()
@@ -44,14 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         passCategory.identifier = "PURCHASE_PASS_CATEGORY"
         passCategory.setActions([purchasePassType,cancelPurchasePassType], forContext:.Default)
         let categorySets:Set<UIUserNotificationCategory> = [passCategory];
-         // End Categories
+        // End Categories
         let types = UIUserNotificationSettings(forTypes: [.Alert, .Badge],categories:categorySets)
         
         UIApplication.sharedApplication().registerUserNotificationSettings(types)
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
         if let notificationPayLoad = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
-             let orderId = notificationPayLoad["orderId"] as? NSString
+            let orderId = notificationPayLoad["orderId"] as? NSString
             print(orderId);
         }
         
@@ -87,11 +87,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
-       
         if(TransitFareClient.sharedInstance.IsLoggedIn()){
-            
             if(identifier==ActionCategory.Purchase.rawValue){
-                print("clicked on purchase")
+                if let _: String = userInfo["orderId"] as? String {
+                    let tabBar :UITabBarController = self.window?.rootViewController as! UITabBarController;
+                    tabBar.redirectToSavedCardsView()
+                    completionHandler()
+                }
             }
             else{
                 print("clicked on cancel")
@@ -115,13 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if(application.applicationState == .Inactive){
                 if let _: String = userInfo["orderId"] as? String {
                     let tabBar :UITabBarController = self.window?.rootViewController as! UITabBarController;
-                    if let viewController = tabBar.viewControllers?[4]{
-                        tabBar.selectedViewController = viewController
-                        if let navController = viewController as? UINavigationController{
-                           let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("savedCardStoryBoard") as UIViewController
-                            navController.pushViewController(viewController, animated: true)
-                        }
-                    }
+                    tabBar.redirectToSavedCardsView()
                 }
             }
             completionHandler(UIBackgroundFetchResult.NewData)
@@ -132,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-       
+        
     }
     
     func applicationWillResignActive(application: UIApplication) {
