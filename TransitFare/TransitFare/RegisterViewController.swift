@@ -118,7 +118,7 @@ class RegisterViewController: UIViewController {
         self.registerButton!.backgroundColor = MaterialColor.pink.base
         self.registerButton!.alpha = 0.8
         frostedView!.addSubview(self.registerButton!)
-        self.registerButton?.addTarget(self, action: Selector("registerClick:"), forControlEvents: .TouchUpInside)
+        self.registerButton?.addTarget(self, action: #selector(self.registerClick(_:)), forControlEvents: .TouchUpInside)
         self.registerButton!.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(self.passwordTextField!.snp_bottom).offset(20)
             make.centerX.equalTo(self.frostedView!)
@@ -128,7 +128,7 @@ class RegisterViewController: UIViewController {
         
         self.isAlreadyLoggedinButton = UIButton()
         self.isAlreadyLoggedinButton?.setTitle("Is already logged in?", forState: .Normal)
-        self.isAlreadyLoggedinButton?.addTarget(self, action: Selector("alreadyLoggedIn:"), forControlEvents: .TouchUpInside)
+        self.isAlreadyLoggedinButton?.addTarget(self, action: #selector(self.alreadyLoggedIn(_:)), forControlEvents: .TouchUpInside)
         self.isAlreadyLoggedinButton?.titleLabel?.textColor = UIColor.whiteColor()
         frostedView!.addSubview(self.isAlreadyLoggedinButton!)
         self.isAlreadyLoggedinButton!.snp_makeConstraints{ (make) -> Void in

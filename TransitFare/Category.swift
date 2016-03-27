@@ -9,6 +9,6 @@
 import Foundation
 
 enum ActionCategory: String {
-    case Purchase
-    case Cancel
+    case Purchase = "Purchase"
+    case Cancel = "Cancel"
 }

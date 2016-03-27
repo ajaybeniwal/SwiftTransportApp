@@ -97,7 +97,7 @@ class LoginViewController: UIViewController {
         self.loginButton!.backgroundColor = MaterialColor.pink.base
         self.loginButton!.alpha = 0.8
         frostedView!.addSubview(self.loginButton!)
-        self.loginButton?.addTarget(self, action: Selector("loginClick:"), forControlEvents: .TouchUpInside)
+        self.loginButton?.addTarget(self, action: #selector(self.loginClick(_:)), forControlEvents: .TouchUpInside)
         
         self.loginButton!.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(self.passwordTextField!.snp_bottom).offset(20)
@@ -111,7 +111,7 @@ class LoginViewController: UIViewController {
         self.registerButton!.backgroundColor = MaterialColor.blue.base
         self.registerButton!.alpha = 0.8
         frostedView!.addSubview(self.registerButton!)
-        self.registerButton?.addTarget(self, action: Selector("registerClick:"), forControlEvents: .TouchUpInside)
+        self.registerButton?.addTarget(self, action: #selector(self.registerClick(_:)), forControlEvents: .TouchUpInside)
         self.registerButton!.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(self.loginButton!.snp_bottom).offset(20)
             make.centerX.equalTo(self.frostedView!)

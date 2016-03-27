@@ -58,7 +58,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
         }
         
         
-        addNewPassButton.addTarget(self, action: "addNewPass:", forControlEvents: UIControlEvents.TouchUpInside)
+        addNewPassButton.addTarget(self, action: #selector(self.addNewPass(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     
@@ -86,7 +86,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
             
         }
         
-        addNewCreditCardButton.addTarget(self, action: "addNewCreditCard:", forControlEvents: UIControlEvents.TouchUpInside)
+        addNewCreditCardButton.addTarget(self, action: #selector(self.addNewCreditCard(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
         
@@ -108,7 +108,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
             make.trailing.equalTo(self.view).offset(-24)
             
         }
-        self.addPassButton?.addTarget(self, action: Selector("addToWalletClick:"), forControlEvents: .TouchUpInside)
+        self.addPassButton?.addTarget(self, action: #selector(self.addToWalletClick(_:)), forControlEvents: .TouchUpInside)
         
         
         
@@ -119,7 +119,7 @@ class FirstViewController: UIViewController, PKAddPassesViewControllerDelegate {
         addNewButton.setImage(img, forState: .Normal)
         addNewButton.setImage(img, forState: .Highlighted)
         addNewButton.tintColor = UIColor.whiteColor()
-        addNewButton.addTarget(self, action: "addNewButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        addNewButton.addTarget(self, action: #selector(self.addNewButtonClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     
