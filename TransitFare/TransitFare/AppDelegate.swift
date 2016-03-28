@@ -67,6 +67,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if currentUser == nil {
             self.window?.rootViewController = LoginViewController()
         }
+            
+        else{
+            
+            if let notificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
+                if let _: String = notificationPayload["orderId"] as? String {
+                    let tabBar :UITabBarController = self.window?.rootViewController as! UITabBarController;
+                    tabBar.redirectToSavedCardsView()
+                }
+            }
+            
+        }
+        
+        
         return true
     }
     
@@ -114,12 +127,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         let currentUser = PFUser.currentUser()
         if currentUser != nil {
-            if(application.applicationState == .Inactive){
-                if let _: String = userInfo["orderId"] as? String {
-                    let tabBar :UITabBarController = self.window?.rootViewController as! UITabBarController;
-                    tabBar.redirectToSavedCardsView()
+            if let aps = userInfo["aps"] as? [String: AnyObject]{
+                // This means it is a silent notification and data will be download in background
+                
+                if let _ = aps["content-available"]{
+                    print("download in the background")
+                }
+                
+                
+            }
+            else{
+                if(application.applicationState == .Inactive){
+                    if let _: String = userInfo["orderId"] as? String {
+                        let tabBar :UITabBarController = self.window?.rootViewController as! UITabBarController;
+                        tabBar.redirectToSavedCardsView()
+                    }
                 }
             }
+            
             completionHandler(UIBackgroundFetchResult.NewData)
         }
         else{
