@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let textAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().tintColor =  UIColor.whiteColor()
-        UINavigationBar.appearance().barTintColor = UIColor(red: 33.0/255.0, green: 150.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor.transitFareNavigationBarColor()
         UINavigationBar.appearance().barStyle = UIBarStyle.Black
         
         //Adding Categories for push Notifications

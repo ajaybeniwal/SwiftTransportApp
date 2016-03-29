@@ -86,7 +86,7 @@ class AddNewPassTableViewController: UITableViewController {
     
      /*Fetch the credit card data using alamofire */
     
-    func getCardData(completionBlock:()->Void) -> Void{
+    func getCardData(completionBlock:TransitFareNoInputVoidOut) -> Void{
         let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Alamofire.request(.GET, APIUtility.getEndPointURL("billingInfo")).responseJSON(completionHandler:
             { [unowned self]
@@ -117,7 +117,7 @@ class AddNewPassTableViewController: UITableViewController {
     
     /*Fetch the product data and the credit card data from the api using alamofire */
     
-    func getPassData(completionBlock:()->Void)->Void{
+    func getPassData(completionBlock:TransitFareNoInputVoidOut)->Void{
         Alamofire.request(.GET, APIUtility.getEndPointURL("fareLookup")).responseJSON(completionHandler:
             {[unowned self]
                 (response) -> Void in

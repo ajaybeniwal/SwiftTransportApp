@@ -154,7 +154,9 @@ class LoginViewController: UIViewController {
              installation.saveInBackground()
              installation.addUniqueObject("Giants", forKey: "channels")
              let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-             appDelegate.window?.rootViewController = appDelegate.tabViewController
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let rootViewController = storyboard.instantiateViewControllerWithIdentifier("HomeStory") as! UITabBarController
+                appDelegate.window?.rootViewController = rootViewController
                 
             } else {
                 self.showAlert("Error", message: "Wrong username or password")

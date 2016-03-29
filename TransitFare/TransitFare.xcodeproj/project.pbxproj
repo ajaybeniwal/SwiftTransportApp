@@ -10,6 +10,8 @@
 		0B9970161C93D4CD00FDCBFB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */; };
 		0BB7C8801CA17BA60075DF94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7C87F1CA17BA60075DF94 /* Category.swift */; };
 		0BB7CCFC1CA4F5200075DF94 /* UITabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7CCFB1CA4F5200075DF94 /* UITabBarExtension.swift */; };
+		0BB7CDC21CAA6DFA0075DF94 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7CDC11CAA6DFA0075DF94 /* UIColorExtension.swift */; };
+		0BB7CDC51CAA74200075DF94 /* TransitFareTypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7CDC41CAA74200075DF94 /* TransitFareTypeAlias.swift */; };
 		0BCF6BC91C92C03B00C11F4E /* TransportAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF6BC81C92C03B00C11F4E /* TransportAppUITests.swift */; };
 		993EAEA51C620B2200899916 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993EAEA41C620B2200899916 /* Material.framework */; };
 		993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EAEA61C6246D100899916 /* AddNewCreditCardViewController.swift */; };
@@ -104,6 +106,8 @@
 		0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		0BB7C87F1CA17BA60075DF94 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0BB7CCFB1CA4F5200075DF94 /* UITabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarExtension.swift; sourceTree = "<group>"; };
+		0BB7CDC11CAA6DFA0075DF94 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0BB7CDC41CAA74200075DF94 /* TransitFareTypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitFareTypeAlias.swift; sourceTree = "<group>"; };
 		0BCF6BC61C92C03B00C11F4E /* TransportAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransportAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCF6BC81C92C03B00C11F4E /* TransportAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportAppUITests.swift; sourceTree = "<group>"; };
 		0BCF6BCA1C92C03B00C11F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,6 +203,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BB7CDC01CAA6DD70075DF94 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				0BB7CDC11CAA6DFA0075DF94 /* UIColorExtension.swift */,
+			);
+			name = UIColor;
+			sourceTree = "<group>";
+		};
+		0BB7CDC31CAA73F00075DF94 /* TypeAlias */ = {
+			isa = PBXGroup;
+			children = (
+				0BB7CDC41CAA74200075DF94 /* TransitFareTypeAlias.swift */,
+			);
+			name = TypeAlias;
+			sourceTree = "<group>";
+		};
 		0BCF6BC71C92C03B00C11F4E /* TransportAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +240,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				0BB7CDC31CAA73F00075DF94 /* TypeAlias */,
 				99F3F78A1C803672002EFFFD /* Pass */,
 				99F3F77F1C7FE619002EFFFD /* PassKit.framework */,
 				99EE0B571C7DB2F000CFFB1C /* Extensions */,
@@ -303,6 +324,7 @@
 		99EE0B571C7DB2F000CFFB1C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0BB7CDC01CAA6DD70075DF94 /* UIColor */,
 				99F3F7821C801833002EFFFD /* PKPass */,
 				99EE0B581C7DB2FB00CFFB1C /* UIViewController */,
 			);
@@ -571,6 +593,7 @@
 			files = (
 				999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */,
 				99EE0B5A1C7DB32200CFFB1C /* TopMostViewController.swift in Sources */,
+				0BB7CDC51CAA74200075DF94 /* TransitFareTypeAlias.swift in Sources */,
 				993EAEBA1C68763500899916 /* TransitFareClientSetting.swift in Sources */,
 				993EAEB31C672E8000899916 /* RegisterViewController.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
@@ -591,6 +614,7 @@
 				99EE0B461C784B4300CFFB1C /* SavedCardsTableViewCell.swift in Sources */,
 				993EAEA71C6246D100899916 /* AddNewCreditCardViewController.swift in Sources */,
 				0BB7CCFC1CA4F5200075DF94 /* UITabBarExtension.swift in Sources */,
+				0BB7CDC21CAA6DFA0075DF94 /* UIColorExtension.swift in Sources */,
 				993EAEAC1C66555B00899916 /* LoginViewController.swift in Sources */,
 				999C63E51C59137800822ECF /* Product.swift in Sources */,
 				0BB7C8801CA17BA60075DF94 /* Category.swift in Sources */,
