@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B31013E1CB2444E006F74D7 /* MyPassCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B31013D1CB2444E006F74D7 /* MyPassCollectionViewController.swift */; };
+		0B3101401CB244AB006F74D7 /* MyPassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B31013F1CB244AB006F74D7 /* MyPassCollectionViewCell.swift */; };
 		0B9970161C93D4CD00FDCBFB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */; };
 		0BB7C8801CA17BA60075DF94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7C87F1CA17BA60075DF94 /* Category.swift */; };
 		0BB7CCFC1CA4F5200075DF94 /* UITabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7CCFB1CA4F5200075DF94 /* UITabBarExtension.swift */; };
@@ -103,6 +105,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B31013D1CB2444E006F74D7 /* MyPassCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPassCollectionViewController.swift; sourceTree = "<group>"; };
+		0B31013F1CB244AB006F74D7 /* MyPassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPassCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		0BB7C87F1CA17BA60075DF94 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0BB7CCFB1CA4F5200075DF94 /* UITabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarExtension.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				99EE0B431C78181800CFFB1C /* MoreTableViewController.swift */,
 				99EE0B451C784B4300CFFB1C /* SavedCardsTableViewCell.swift */,
 				99EE0B471C785AEF00CFFB1C /* SavedCardsTableViewController.swift */,
+				0B31013D1CB2444E006F74D7 /* MyPassCollectionViewController.swift */,
+				0B31013F1CB244AB006F74D7 /* MyPassCollectionViewCell.swift */,
 			);
 			path = TransitFare;
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				993EAEBA1C68763500899916 /* TransitFareClientSetting.swift in Sources */,
 				993EAEB31C672E8000899916 /* RegisterViewController.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
+				0B31013E1CB2444E006F74D7 /* MyPassCollectionViewController.swift in Sources */,
 				993EAEB81C68711500899916 /* TransitFareSetting.swift in Sources */,
 				99EE0B481C785AEF00CFFB1C /* SavedCardsTableViewController.swift in Sources */,
 				993EAF171C72B59200899916 /* CountryEnum.swift in Sources */,
@@ -619,6 +626,7 @@
 				999C63E51C59137800822ECF /* Product.swift in Sources */,
 				0BB7C8801CA17BA60075DF94 /* Category.swift in Sources */,
 				99F3F7C61C8BE2D0002EFFFD /* TicketViewController.swift in Sources */,
+				0B3101401CB244AB006F74D7 /* MyPassCollectionViewCell.swift in Sources */,
 				993EAEB61C68693D00899916 /* HomeViewController.swift in Sources */,
 				99EE0B401C77247300CFFB1C /* UIAlertAPI.swift in Sources */,
 			);

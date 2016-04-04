@@ -5,95 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--MyPass-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController storyboardIdentifier="MypassStory" id="9pv-A4-QxB" customClass="FirstViewController" customModule="TransitFare" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-k7-sj2">
-                                <rect key="frame" x="28" y="97" width="544" height="278"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iqo-rS-IVZ">
-                                        <rect key="frame" x="0.0" y="8" width="544" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Tx3-9X-4Im"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acme 10 day pass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTE-f1-cQO">
-                                        <rect key="frame" x="13" y="216" width="144" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0m-lk-ll9">
-                                        <rect key="frame" x="0.0" y="245" width="544" height="33"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires: Jan 21,2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmj-Xh-Dh5">
-                                                <rect key="frame" x="14" y="0.0" width="165" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Nmj-Xh-Dh5" secondAttribute="bottom" constant="12" id="PAW-dX-Hqi"/>
-                                            <constraint firstItem="Nmj-Xh-Dh5" firstAttribute="leading" secondItem="x0m-lk-ll9" secondAttribute="leading" constant="14" id="Za3-yp-dUS"/>
-                                            <constraint firstItem="Nmj-Xh-Dh5" firstAttribute="top" secondItem="x0m-lk-ll9" secondAttribute="top" id="feA-pY-Zh6"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="kTE-f1-cQO" firstAttribute="top" secondItem="iqo-rS-IVZ" secondAttribute="bottom" constant="8" id="1NJ-dw-Hfy"/>
-                                    <constraint firstItem="iqo-rS-IVZ" firstAttribute="leading" secondItem="cH3-k7-sj2" secondAttribute="leading" id="DI7-IC-5CW"/>
-                                    <constraint firstItem="x0m-lk-ll9" firstAttribute="top" secondItem="kTE-f1-cQO" secondAttribute="bottom" constant="8" id="FYR-cx-Eus"/>
-                                    <constraint firstAttribute="trailing" secondItem="iqo-rS-IVZ" secondAttribute="trailing" id="M2Q-Pg-bZZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="x0m-lk-ll9" secondAttribute="trailing" id="P82-GX-vc8"/>
-                                    <constraint firstItem="kTE-f1-cQO" firstAttribute="leading" secondItem="cH3-k7-sj2" secondAttribute="leading" constant="13" id="b1e-ND-TcP"/>
-                                    <constraint firstAttribute="bottom" secondItem="x0m-lk-ll9" secondAttribute="bottom" id="lXY-st-Bj8"/>
-                                    <constraint firstItem="iqo-rS-IVZ" firstAttribute="top" secondItem="cH3-k7-sj2" secondAttribute="top" constant="8" id="oTQ-FU-zIw"/>
-                                    <constraint firstItem="x0m-lk-ll9" firstAttribute="leading" secondItem="cH3-k7-sj2" secondAttribute="leading" id="z7b-J7-OpP"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkU-3D-hkK" customClass="FabButton" customModule="Material">
-                                <rect key="frame" x="524" y="481" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="TdV-xz-I59"/>
-                                    <constraint firstAttribute="width" constant="48" id="rhj-OY-S3d"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="addButtonClick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="CmX-oV-F7Y"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="OkU-3D-hkK" secondAttribute="bottom" constant="22" id="2hm-sn-1fb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OkU-3D-hkK" secondAttribute="trailing" constant="8" id="3ub-WV-Wzm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cH3-k7-sj2" secondAttribute="trailing" constant="8" id="89c-6I-JZS"/>
-                            <constraint firstItem="cH3-k7-sj2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="8" id="X74-rs-5uy"/>
-                            <constraint firstItem="cH3-k7-sj2" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="33" id="lBV-Et-TWE"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="MyPass" id="jvV-6k-DFJ"/>
-                    <connections>
-                        <outlet property="addNewButton" destination="OkU-3D-hkK" id="o10-ly-AM0"/>
-                        <outlet property="cardContainer" destination="cH3-k7-sj2" id="Jct-Vp-ywV"/>
-                        <outlet property="passCacheImageView" destination="iqo-rS-IVZ" id="e4r-Xd-F8S"/>
-                        <segue destination="Svj-XZ-7N3" kind="presentation" identifier="presentCardFromPass" id="bIH-w0-mW3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1771" y="-306"/>
-        </scene>
         <!--Add New Card-->
         <scene sceneID="FBq-Ab-6Iq">
             <objects>
@@ -117,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGh-iE-uAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3165" y="-34"/>
+            <point key="canvasLocation" x="3977" y="-34"/>
         </scene>
         <!--AddNewPass-->
         <scene sceneID="p9w-Bh-UZY">
@@ -216,11 +127,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BV7-h0-uU6" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="xYM-CH-cVS" kind="relationship" relationship="viewControllers" id="UEX-Ae-hsW"/>
                         <segue destination="IG4-c7-HqI" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="dGw-zB-TVX" kind="relationship" relationship="viewControllers" id="5iD-65-AbO"/>
                         <segue destination="e5F-Ye-Qlq" kind="relationship" relationship="viewControllers" id="QPA-zk-rFx"/>
+                        <segue destination="IX2-gX-Bqe" kind="relationship" relationship="viewControllers" id="PGe-My-91e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -228,23 +139,56 @@
             <point key="canvasLocation" x="-170" y="758"/>
         </scene>
         <!--MyPass-->
-        <scene sceneID="3Zz-kv-DhA">
+        <scene sceneID="KOC-U5-ucW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BV7-h0-uU6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyPass" image="Wallet" id="acW-dT-cKf"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tfq-ML-AGS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="L4a-0I-QCV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GYB-Gc-1MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <collectionViewController id="qAp-hJ-ERY" customClass="MyPassCollectionViewController" customModule="TransitFare" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xAX-PT-5tO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wN9-Km-lXO">
+                            <size key="itemSize" width="284" height="373"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPassCell" id="Xac-nf-KsQ" customClass="MyPassCollectionViewCell" customModule="TransitFare" customModuleProvider="target">
+                                <rect key="frame" x="10" y="74" width="284" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="284" height="373"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCo-z6-49L">
+                                            <rect key="frame" x="2" y="27" width="280" height="280"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="280" id="IC9-sO-mLG"/>
+                                                <constraint firstAttribute="width" constant="280" id="kHp-CK-PuK"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="NCo-z6-49L" firstAttribute="centerX" secondItem="Xac-nf-KsQ" secondAttribute="centerX" id="mq0-eL-LaI"/>
+                                    <constraint firstItem="NCo-z6-49L" firstAttribute="top" secondItem="Xac-nf-KsQ" secondAttribute="topMargin" constant="19" id="qLb-yM-4jP"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="barCodeImage" destination="NCo-z6-49L" id="Q8F-jY-Dku"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="qAp-hJ-ERY" id="4wP-Co-j6R"/>
+                            <outlet property="delegate" destination="qAp-hJ-ERY" id="z6v-Os-JVW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="MyPass" id="q7X-sQ-O4M"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1f-kO-8Qj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="1934" y="-339"/>
         </scene>
         <!--AddPass-->
         <scene sceneID="V9y-Cq-fpi">
@@ -281,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0a-IH-Xz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2520" y="-34"/>
+            <point key="canvasLocation" x="3332" y="-34"/>
         </scene>
         <!--BusTime-->
         <scene sceneID="Pyy-46-pVg">
@@ -531,6 +475,25 @@
             </objects>
             <point key="canvasLocation" x="750" y="2503"/>
         </scene>
+        <!--MyPass-->
+        <scene sceneID="X6T-sS-Bed">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IX2-gX-Bqe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MyPass" image="Wallet" id="ewZ-bM-sjm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9wO-aO-ua1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qAp-hJ-ERY" kind="relationship" relationship="rootViewController" id="kxQ-if-kbH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Zz-wr-fg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="726" y="-353"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Amex" width="73" height="44"/>
@@ -543,7 +506,7 @@
         <image name="ticket" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bIH-w0-mW3"/>
+        <segue reference="fuL-V5-Gh8"/>
         <segue reference="IWZ-sp-zoG"/>
     </inferredMetricsTieBreakers>
 </document>
