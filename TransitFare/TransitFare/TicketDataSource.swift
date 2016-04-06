@@ -42,5 +42,7 @@ extension TicketDataSource{
         cell!.priceLabel.text = String(dataArray[indexPath.row].price)
         return cell!
     }
+    
+    
 
 }

@@ -127,11 +127,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="IX2-gX-Bqe" kind="relationship" relationship="viewControllers" id="PGe-My-91e"/>
                         <segue destination="xYM-CH-cVS" kind="relationship" relationship="viewControllers" id="UEX-Ae-hsW"/>
                         <segue destination="IG4-c7-HqI" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="dGw-zB-TVX" kind="relationship" relationship="viewControllers" id="5iD-65-AbO"/>
                         <segue destination="e5F-Ye-Qlq" kind="relationship" relationship="viewControllers" id="QPA-zk-rFx"/>
-                        <segue destination="IX2-gX-Bqe" kind="relationship" relationship="viewControllers" id="PGe-My-91e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -147,21 +147,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wN9-Km-lXO">
-                            <size key="itemSize" width="284" height="373"/>
+                            <size key="itemSize" width="340" height="373"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPassCell" id="Xac-nf-KsQ" customClass="MyPassCollectionViewCell" customModule="TransitFare" customModuleProvider="target">
-                                <rect key="frame" x="10" y="74" width="284" height="373"/>
+                                <rect key="frame" x="130" y="74" width="340" height="373"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="284" height="373"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="373"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCo-z6-49L">
-                                            <rect key="frame" x="2" y="27" width="280" height="280"/>
+                                            <rect key="frame" x="30" y="27" width="280" height="280"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="280" id="IC9-sO-mLG"/>
                                                 <constraint firstAttribute="width" constant="280" id="kHp-CK-PuK"/>
