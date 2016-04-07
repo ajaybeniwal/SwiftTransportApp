@@ -152,6 +152,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        let tabBar :UITabBarController = self.window?.rootViewController as! UITabBarController;
+        tabBar.redirectToSavedCardsView()
+        return true
+    }
+    
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
     }

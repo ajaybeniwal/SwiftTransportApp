@@ -277,9 +277,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="R1L-rG-fnQ" kind="show" id="IWZ-sp-zoG"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="RqD-L8-jZG">
                                         <rect key="frame" x="0.0" y="143" width="600" height="44"/>
@@ -507,6 +504,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fuL-V5-Gh8"/>
-        <segue reference="IWZ-sp-zoG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -34,8 +34,14 @@ class MoreTableViewController: UITableViewController {
         return 44
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.isFirstRow()){
+            let url = NSURL(string: "TransitFare://mypath/id")
+            UIApplication.sharedApplication().openURL(url!)
+        }
     }
+    
+   
     
     @IBAction func signOutClick(sender: AnyObject) {
         print(NSThread.isMainThread())
