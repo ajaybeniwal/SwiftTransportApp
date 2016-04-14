@@ -9,3 +9,4 @@
 import Foundation
 
 public typealias TransitFareNoInputVoidOut = () -> Void
+public typealias SwitchWithTextViewPresentable = protocol<TextPresentableCell, SwitchPresentableCell>

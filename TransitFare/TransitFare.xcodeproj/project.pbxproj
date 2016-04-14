@@ -10,6 +10,12 @@
 		0B31013E1CB2444E006F74D7 /* MyPassCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B31013D1CB2444E006F74D7 /* MyPassCollectionViewController.swift */; };
 		0B3101401CB244AB006F74D7 /* MyPassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B31013F1CB244AB006F74D7 /* MyPassCollectionViewCell.swift */; };
 		0B424C9A1CB6576200CD3AE1 /* NSIndexPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424C991CB6576200CD3AE1 /* NSIndexPathExtension.swift */; };
+		0B424CA21CB792B000CD3AE1 /* TextPresentableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424CA11CB792B000CD3AE1 /* TextPresentableCell.swift */; };
+		0B424CA41CB792C700CD3AE1 /* SwitchPresentableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424CA31CB792C700CD3AE1 /* SwitchPresentableCell.swift */; };
+		0B424CA61CB7972400CD3AE1 /* DefaultTextSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424CA51CB7972400CD3AE1 /* DefaultTextSwitchCell.swift */; };
+		0B424CA81CB799DC00CD3AE1 /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424CA71CB799DC00CD3AE1 /* SettingsViewCell.swift */; };
+		0B424CAA1CB79D7400CD3AE1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424CA91CB79D7400CD3AE1 /* SettingsViewController.swift */; };
+		0B424CAD1CB79F4400CD3AE1 /* SettingsTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424CAC1CB79F4400CD3AE1 /* SettingsTableDataSource.swift */; };
 		0B9970161C93D4CD00FDCBFB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */; };
 		0BB7C8801CA17BA60075DF94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7C87F1CA17BA60075DF94 /* Category.swift */; };
 		0BB7CCFC1CA4F5200075DF94 /* UITabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7CCFB1CA4F5200075DF94 /* UITabBarExtension.swift */; };
@@ -109,6 +115,12 @@
 		0B31013D1CB2444E006F74D7 /* MyPassCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPassCollectionViewController.swift; sourceTree = "<group>"; };
 		0B31013F1CB244AB006F74D7 /* MyPassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPassCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B424C991CB6576200CD3AE1 /* NSIndexPathExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSIndexPathExtension.swift; sourceTree = "<group>"; };
+		0B424CA11CB792B000CD3AE1 /* TextPresentableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPresentableCell.swift; sourceTree = "<group>"; };
+		0B424CA31CB792C700CD3AE1 /* SwitchPresentableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchPresentableCell.swift; sourceTree = "<group>"; };
+		0B424CA51CB7972400CD3AE1 /* DefaultTextSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTextSwitchCell.swift; sourceTree = "<group>"; };
+		0B424CA71CB799DC00CD3AE1 /* SettingsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
+		0B424CA91CB79D7400CD3AE1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0B424CAC1CB79F4400CD3AE1 /* SettingsTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableDataSource.swift; sourceTree = "<group>"; };
 		0B9970151C93D4CD00FDCBFB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		0BB7C87F1CA17BA60075DF94 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0BB7CCFB1CA4F5200075DF94 /* UITabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarExtension.swift; sourceTree = "<group>"; };
@@ -217,6 +229,49 @@
 			name = NSIndexPath;
 			sourceTree = "<group>";
 		};
+		0B424C9C1CB7905C00CD3AE1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0B424CAB1CB79F1D00CD3AE1 /* DataSource */,
+				0B424C9E1CB7907F00CD3AE1 /* View */,
+				0B424C9D1CB7906900CD3AE1 /* ViewController */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		0B424C9D1CB7906900CD3AE1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0B424CA91CB79D7400CD3AE1 /* SettingsViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		0B424C9E1CB7907F00CD3AE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B424CA71CB799DC00CD3AE1 /* SettingsViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0B424CA01CB7926200CD3AE1 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0B424CA11CB792B000CD3AE1 /* TextPresentableCell.swift */,
+				0B424CA31CB792C700CD3AE1 /* SwitchPresentableCell.swift */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
+		0B424CAB1CB79F1D00CD3AE1 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0B424CAC1CB79F4400CD3AE1 /* SettingsTableDataSource.swift */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
 		0BB7CDC01CAA6DD70075DF94 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +309,7 @@
 		998BB91A1C4C871D00136EDD = {
 			isa = PBXGroup;
 			children = (
+				0B424CA01CB7926200CD3AE1 /* protocols */,
 				0BB7CDC31CAA73F00075DF94 /* TypeAlias */,
 				99F3F78A1C803672002EFFFD /* Pass */,
 				99F3F77F1C7FE619002EFFFD /* PassKit.framework */,
@@ -290,6 +346,7 @@
 		998BB9251C4C871D00136EDD /* TransitFare */ = {
 			isa = PBXGroup;
 			children = (
+				0B424C9C1CB7905C00CD3AE1 /* Settings */,
 				99F3F7C11C8BE154002EFFFD /* Tickets */,
 				99F3F7811C7FE619002EFFFD /* TransitFare.entitlements */,
 				998BB9261C4C871D00136EDD /* AppDelegate.swift */,
@@ -324,6 +381,7 @@
 				999C63E61C5913BE00822ECF /* CreditCard.swift */,
 				993EAF161C72B59100899916 /* CountryEnum.swift */,
 				0BB7C87F1CA17BA60075DF94 /* Category.swift */,
+				0B424CA51CB7972400CD3AE1 /* DefaultTextSwitchCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -608,9 +666,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B424CA21CB792B000CD3AE1 /* TextPresentableCell.swift in Sources */,
+				0B424CA81CB799DC00CD3AE1 /* SettingsViewCell.swift in Sources */,
 				999C63DE1C58653000822ECF /* AddNewPassTableViewCell.swift in Sources */,
 				99EE0B5A1C7DB32200CFFB1C /* TopMostViewController.swift in Sources */,
 				0BB7CDC51CAA74200075DF94 /* TransitFareTypeAlias.swift in Sources */,
+				0B424CAA1CB79D7400CD3AE1 /* SettingsViewController.swift in Sources */,
+				0B424CA41CB792C700CD3AE1 /* SwitchPresentableCell.swift in Sources */,
+				0B424CAD1CB79F4400CD3AE1 /* SettingsTableDataSource.swift in Sources */,
 				993EAEBA1C68763500899916 /* TransitFareClientSetting.swift in Sources */,
 				993EAEB31C672E8000899916 /* RegisterViewController.swift in Sources */,
 				998BB9271C4C871D00136EDD /* AppDelegate.swift in Sources */,
@@ -640,6 +703,7 @@
 				99F3F7C61C8BE2D0002EFFFD /* TicketViewController.swift in Sources */,
 				0B3101401CB244AB006F74D7 /* MyPassCollectionViewCell.swift in Sources */,
 				993EAEB61C68693D00899916 /* HomeViewController.swift in Sources */,
+				0B424CA61CB7972400CD3AE1 /* DefaultTextSwitchCell.swift in Sources */,
 				99EE0B401C77247300CFFB1C /* UIAlertAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

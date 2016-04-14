@@ -12,4 +12,10 @@ extension NSIndexPath{
     func isFirstRow () ->Bool{
         return self.row == 0
     }
+    func isSecondRow() ->Bool{
+        return self.row == 1
+    }
+    func isThirdRow() ->Bool{
+        return self.row == 2
+    }
 }

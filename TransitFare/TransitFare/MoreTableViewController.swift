@@ -14,6 +14,7 @@ import MBProgressHUD
 class MoreTableViewController: UITableViewController {
     @IBOutlet var profileImageView: UIImageView!
 
+    @IBOutlet weak var settingImageView: UIImageView!
     
     @IBOutlet var paymentImage: UIImageView!
     override func viewDidLoad() {
@@ -23,6 +24,8 @@ class MoreTableViewController: UITableViewController {
         paymentImage.tintColor = MaterialColor.blue.base
         profileImageView.image = profileImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         profileImageView.tintColor = MaterialColor.green.base
+        settingImageView.tintColor = MaterialColor.pink.base
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +41,10 @@ class MoreTableViewController: UITableViewController {
         if(indexPath.isFirstRow()){
             let url = NSURL(string: "TransitFare://mypath/id")
             UIApplication.sharedApplication().openURL(url!)
+        }
+        else if(indexPath.isThirdRow()){
+           let settingsController = SettingsViewController()
+           self.navigationController?.pushViewController(settingsController, animated: true)
         }
     }
     
