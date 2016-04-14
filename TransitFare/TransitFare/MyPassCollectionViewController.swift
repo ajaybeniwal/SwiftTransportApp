@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 private let reuseIdentifier = "MyPassCell"
-
+private let leftAndRightPaddings: CGFloat =  8.0
 class MyPassCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
@@ -52,6 +52,13 @@ class MyPassCollectionViewController: UICollectionViewController {
         // Configure the cell
     
         return cell
+    }
+    
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = (CGRectGetWidth(collectionView.frame) - leftAndRightPaddings) / 1
+        return CGSizeMake(width, 373)
     }
 
     // MARK: UICollectionViewDelegate

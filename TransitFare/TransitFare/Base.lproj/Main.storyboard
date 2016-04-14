@@ -161,16 +161,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCo-z6-49L">
-                                            <rect key="frame" x="30" y="27" width="280" height="280"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="280" id="IC9-sO-mLG"/>
-                                                <constraint firstAttribute="width" constant="280" id="kHp-CK-PuK"/>
-                                            </constraints>
+                                            <rect key="frame" x="30" y="27" width="280" height="316"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="NCo-z6-49L" firstAttribute="leading" secondItem="Xac-nf-KsQ" secondAttribute="leadingMargin" constant="22" id="9bE-lW-dgs"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="NCo-z6-49L" secondAttribute="bottom" constant="22" id="OxV-3D-4kG"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="NCo-z6-49L" secondAttribute="trailing" constant="22" id="mji-Oe-E8p"/>
                                     <constraint firstItem="NCo-z6-49L" firstAttribute="centerX" secondItem="Xac-nf-KsQ" secondAttribute="centerX" id="mq0-eL-LaI"/>
                                     <constraint firstItem="NCo-z6-49L" firstAttribute="top" secondItem="Xac-nf-KsQ" secondAttribute="topMargin" constant="19" id="qLb-yM-4jP"/>
                                 </constraints>
